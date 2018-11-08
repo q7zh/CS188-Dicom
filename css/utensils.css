@@ -1,0 +1,95 @@
+a{
+    text-decoration: none;
+	width: 25px;
+    display: inline-block;
+    padding: 8px 16px;	
+	margin-top: 20px;
+}
+
+span{
+	display:inline-block;
+}
+
+.top_list{
+	background-color: #ffe651;
+	width: 375px;
+	height: 64px;
+}
+
+#back_button{
+	background:#ffe651;
+	border: none;
+    outline:none;
+}
+
+p#title{
+	text-align:center;
+	padding:5px 81px;
+	font-size: 20px;
+	margin-left:20px;
+}
+.item {
+	padding: 20px 30px;
+	height: 80px;
+	display: flex;
+	width:300px;
+	border-bottom:  1px solid #E1E8EE;
+  
+}
+
+.description{
+	padding-top: 10px;
+	margin-right: 60px;
+	margin-top:15px;
+	width: 80px;
+	font-size:20px;
+}
+.quantity {
+	padding-top: 20px;
+	margin-left: 200px;
+	position:absolute;
+}
+.quantity input {
+	-webkit-appearance: none;
+	border: none;
+	text-align: center;
+	width: 32px;
+	font-size: 16px;
+	color: #43484D;
+	font-weight: 300;
+}
+ 
+button[class*=btn] {
+	width: 30px;
+	height: 30px;
+	background-color: #E1E8EE;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+.minus-btn img {
+	margin-bottom: 3px;
+}
+.plus-btn img {
+	margin-top: 2px;
+}
+ 
+button:focus,
+input:focus {
+	outline:0;
+}
+
+.button {
+    background-color: #0066cc;
+    border: none;
+    color: white;
+	padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 20px;
+    cursor: pointer;
+	width:340px;
+}
+
