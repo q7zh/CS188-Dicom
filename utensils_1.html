@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title>Dicom</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="utensils.css">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
+
+<body>
+
+	<div class="top_list">
+		<span><button id="back_button"><img src="pictures/1.png"  onclick="goBack()" height="25px" ></button></span>
+		<span><p id="title" style="font-weight:bold">Utensils</p></span>
+	</div>
+	
+	<div class="item">
+		<div class="image">
+			<img src="pictures/spoon.png" height="70px">
+		</div>
+		
+		<div class="description">
+			Spoon
+		</div>
+		
+		<div class="quantity">
+			<button class="plus-btn" type="button" name="button">+</button>
+			<input type="text" name="name" value="0">
+			<button class="minus-btn" type="button" name="button">-</button>
+		</div>
+	</div>
+	
+	<div class="item">
+		<div class="image">
+			<img src="pictures/fork.png" height="70px">
+		</div>
+		
+		<div class="description">
+			Fork
+		</div>
+		
+		<div class="quantity">
+			<button class="plus-btn" type="button" name="button">+</button>
+			<input type="text" name="name" value="0">
+			<button class="minus-btn" type="button" name="button">-</button>
+		</div>
+	</div>
+	
+	<div class="item">
+		<div class="image">
+			<img src="pictures/knife.png" height="70px">
+		</div>
+		
+		<div class="description">
+			Knife
+		</div>
+		
+		<div class="quantity">
+			<button class="plus-btn" type="button" name="button">+</button>
+			<input type="text" name="name" value="0">
+			<button class="minus-btn"  type="button" name="button">-</button>
+		</div>
+	</div>
+
+	
+	<div class="item">
+		<div class="image">
+			<img src="pictures/chopsticks.png" height="70px">
+		</div>
+		
+		<div class="description">
+			Chopsticks
+		</div>
+		
+		<div class="quantity">
+			<button class="plus-btn" type="button" name="button" >+</button>
+			<input  id="qt" type="text" value="0">
+			<button class="minus-btn"type="button" name="button">-</button>
+		</div>
+	</div>
+	
+	<button class="button" type="submit" form="nameform" value="Submit" onclick="respond()">Add</button>    
+
+	<script>
+		function goBack() {
+			window.history.back()
+		}
+	</script>
+	
+	<script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<script  src="utensils.js"></script>
+	
+</body>
+</html>
