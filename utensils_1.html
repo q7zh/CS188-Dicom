@@ -4,17 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/utensils.css">
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
-    <meta name="robots" content="noindex,follow" />
+<link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+<meta name="robots" content="noindex,follow" />
 
 <body>
 
-	<div class="top_list">
-		<span><button id="back_button"><img src="pictures/1.png"  onclick="goBack()" height="25px" ></button></span>
-		<span><p id="title" style="font-weight:bold">Utensils</p></span>
+	<div class="header">
+		<div class="backButton">
+			<a href="extra_service_1.html"><i class="fas fa-chevron-left"></i></a>
+		</div>
+		Utensils
 	</div>
-	
+
 	<div class="item">
 		<div class="image">
 			<img src="pictures/spoon.png" height="70px">
@@ -80,7 +84,7 @@
 		</div>
 	</div>
 	
-	<button class="button" type="submit" form="nameform" value="Submit" onclick="respond()">Add</button>    
+<button class="button" type="submit" form="nameform" value="Submit" onclick="add_click()">Add</button>    
 
 	<script>
 		function goBack() {
