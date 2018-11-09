@@ -1,3 +1,15 @@
+body {
+	background-color: #555;
+}
+
+.background {
+	height: 603px;
+	width: 375px;
+	padding-bottom: 15px;
+	background-color: white;
+	text-align: center;
+}
+
 a{
     text-decoration: none;
 	width: 25px;
@@ -23,26 +35,25 @@ a{
 	width: 15.6px;
 	left: 25px;
 }
-
-p#description{
-	font-size: 15px;
-	margin-left:25px;
-
-}
-
 p{
-	 font-family: 'Helvetica';
+	font-family: 'Helvetica';
 	font-weight:bold;
+}
+.instruction{
+	text-align:left;
+	padding-top:40px;
+	margin-left:20px;
+	margin-bottom:-20px;
 }
 
 .row {
+	margin-left:-40px;
     display: flex;
 	width:375px;
 }
 
 .column {
     flex: 33.33%;
-    padding: 0px;
 }
 
 .container {
@@ -66,12 +77,15 @@ p{
     text-decoration: none;
     display: inline-block;
     font-size:20px;
-    margin: 4px 20px;
     cursor: pointer;
 	width:340px;
+}
+.button:hover{
+	background-color:#003399
 }
 
 
 div.button_section{
+	margin-top:105px;
 	width:375px;
 }

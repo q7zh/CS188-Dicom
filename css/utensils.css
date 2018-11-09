@@ -1,11 +1,14 @@
-a{
-    text-decoration: none;
-	width: 25px;
-    display: inline-block;
-    padding: 8px 16px;	
-	margin-top: 20px;
+body {
+	background-color: #555;
 }
+.background {
+	height: 603px;
+	width: 375px;
+	padding-bottom: 15px;
+	background-color: white;
+	text-align: center;
 
+}
 
 .header {
 	height: 64px;
@@ -20,8 +23,7 @@ a{
 
 .header .backButton{
 	position: absolute;
-	margin-top: -24px;
-	margin-left: -21px;	
+
 	width: 15.6px;
 	left: 25px;
 }
@@ -39,6 +41,7 @@ p#title{
 	display: flex;
 	width:300px;
 	border-bottom:  1px solid #E1E8EE;
+	position:relative;
   
 }
 
@@ -93,10 +96,13 @@ input:focus {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 10px 20px;
     cursor: pointer;
 	width:340px;
 	font-family: 'Helvetica';
 	font-size: 20px;
+	margin-top:75px;
+}
+.button:hover{
+	background-color:#003399
 }
 

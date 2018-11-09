@@ -1,0 +1,35 @@
+body {
+	background-color: #555;
+}
+
+.background {
+	height: 603px;
+	width: 375px;
+	padding-bottom: 15px;
+	background-color: white;
+	text-align: center;
+}
+
+.header {
+	height: 64px;
+	width: 375px;
+	background-color:#FFE651;
+	font-size: 17px;
+	font-weight: bold;
+	font-family: 'Helvetica';
+	text-align: center;
+	line-height: 60px;
+}
+
+.header .backButton{
+	position: absolute;
+	width: 15.6px;
+	left: 25px;
+}
+
+.description{
+	font-family: 'Helvetica';
+	width: 80px;
+	font-size:18px;
+}
+
