@@ -10,7 +10,7 @@ span{
 }
 
 .top_list{
-	background-color: #ffe651;
+	background-color: #FFE651;
 	width: 375px;
 	height: 64px;
 }
@@ -35,7 +35,7 @@ p#description{
 }
 
 p{
-	 font-family: 'Roboto';
+	 font-family: 'Helvetica';
 	font-weight:bold;
 }
 

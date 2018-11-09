@@ -23,7 +23,7 @@ span{
 }
 
 p#title{
-	 font-family: 'Roboto';
+	 font-family: 'Helvetica';
 	text-align:center;
 	padding:5px 81px;
 	font-size: 20px;
@@ -39,7 +39,7 @@ p#title{
 }
 
 .description{
-	 font-family: 'Roboto';
+	 font-family: 'Helvetica';
 	padding-top: 10px;
 	margin-right: 60px;
 	margin-top:15px;
@@ -92,7 +92,7 @@ input:focus {
     margin: 10px 20px;
     cursor: pointer;
 	width:340px;
-	font-family: 'Roboto';
+	font-family: 'Helvetica';
 	font-size: 20px;
 }
 
