@@ -3,11 +3,9 @@ body {
 }
 
 .background {
-	height: 603px;
+	height: 640px;
 	width: 375px;
-	padding-bottom: 15px;
 	background-color: white;
-	overflow: scroll;
 	text-align: center;
 }
 
@@ -28,10 +26,49 @@ body {
 	width: 15.6px;
 	left: 25px;
 }
+.container img {
+	object-fit: cover;
+	opacity: 0.9;
+	z-index: -1;
+}
 
-.avatar {
+.container {
+	position: relative;
+	display: inline-block;
 	text-align: center;
-	margin-top: 55px;
+}
+
+.bottom-left {
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 120px;
+	font-weight: bold;
+	font-size: 25px;
+	font-family: 'Helvetica';
+	color: white;
+	text-shadow: 2px 2px 4px #000000;
+	z-index: 1;
+}
+
+.container button {
+	position: absolute;
+	margin-left: 290px;
+	margin-top: 122px;
+	z-index: 1;
+	height: 24px;
+	width: 66px;
+	background-color: #F5A623;
+	text-align: center;
+	border-radius: 6px;
+	border: none;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 13px;
+	color: white;
+}
+
+.container button:hover {
+	background-color: #fcd800;
 }
 
 .question {
@@ -254,4 +291,22 @@ input[type=text] {
 
 .done button:hover {
 	background-color: #fcd800;
+}
+
+.Review{
+	padding-bottom: 18px;
+	margin-left:25px;
+	margin-top:40px;
+	text-align:left;
+	font-family:'Helvetica';
+	font-weight:bold;
+
+}
+textarea {
+	width:305px;
+	height:200px;
+	resize: none;
+	font-family:'Helvetica';
+	padding:10px;
+	font-size:15px;
 }
