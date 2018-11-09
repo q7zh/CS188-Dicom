@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<title>Dicom</title>
+    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    	<link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="./css/restaurantMenu_1.css" rel="stylesheet" />
+	</head>
+	<body>
+		<script src="jquery/js/jquery-1.9.0.min.js"></script>
+    	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="./javascript/placeOrder.js"></script>
+		<script src="./javascript/tipPage.js"></script>
+
+
+		<div class="header">
+			<img src="images/profile.png">
+			Restaurant Menu	
+		</div>
+
+		<div class="background">
+			<div class="restaurantImage">
+				<div class="bottomLeft">BCD Tofu House</div>
+				<!--<button type="button"></button>-->
+				<!-- https://stackoverflow.com/questions/18032220/css-change-image-src-on-imghover -->
+				<div class="restaurantImageAutomatedServicesButton">
+					<a href="#"> <!-- still needs to be linked to something! -->
+					<img src="images/bellNormal.png" height="50" width="50"
+					onmouseover="this.src='images/bellHover.png'"
+					onmouseout="this.src='images/bellNormal.png'"
+					border="0" alt=""/></a>
+					<!--<img src="images/bellNormal.png" height="50" width="50">-->
+				</div>
+				<img src="images/placeOrder.jpg" height="164" width="376">
+			</div>
+
+			<div class="menuHeader">
+				<div class="menuFoodType">Korean</div>
+				<div class='menuRatingStars'>
+					<div class="stars"> 
+						<span class="star on"></span>
+						<span class="star on"></span>
+						<span class="star on"></span>
+						<span class="star on"></span>
+						<span class="star half"></span>
+				<!--<span class="star"></span>-->
+				<!--
+				</div>
+	    			<ul id='stars'>
+	    			<!--
+	      				<li class='star' title='Poor' data-value='1'>
+	        				<span class='starLeftHalf'><i class="fas fa-star-half" ></i><i class="fas fa-star-half" style="transform: scaleX(-1)"></i></span>
+	      				</li>
+	      				<li class='star' title='Fair' data-value='2'>
+	        				<i class='fa fa-star fa-fw'></i>
+	      				</li>
+	      				<li class='star' title='Good' data-value='3'>
+	        				<i class='fa fa-star fa-fw'></i>
+	      				</li>
+	      				<li class='star' title='Excellent' data-value='4'>
+	        				<i class='fa fa-star fa-fw'></i>
+	      				</li>
+	      				<li class='star' title='WOW!!!' data-value='5'>
+	        				<i class='fa fa-star fa-fw'></i>
+	      				</li>
+	    			</ul>
+  				</div>	
+  				-->			
+					</div> <!-- End stars -->
+				</div> <!-- End menuRatingStars -->
+			</div> <!-- End menuHeader -->
+
+			<div class="menuList">
+				<div class="menuCategory" style="height:60px;">
+					<div class="menuCategoryTitle">Popular Meals</div>
+					<div class="menuItem">
+						<div class="itemPrice">$6</div>
+						<div class="item-extra"></div>	
+						<div class="itemName">Tofu with Kalbi<br>Combo</div>
+						<div class="item-number"></div>				
+					</div>				
+				</div>
+				<div class="menuCategory" style="height:120px;">
+					<div class="menuCategoryTitle">Small Plates</div>
+					<div class="menuItem">				
+						<div class="itemPrice">$3+</div>
+						<div class="item-extra"></div>
+						<div class="itemName" style="margin-top: 20px;">Fried Mandu</div>
+						<!--<div class="item-note">Spicy Sauce</div>-->			
+					</div>
+					<div class="menuItem" style="margin-top:100px;">				
+						<div class="itemPrice">$3</div>
+						<div class="item-extra"></div>
+						<div class="itemName" style="margin-top: 20px;">Egg Role</div>
+						<!--<div class="item-note">Spicy Sauce</div>-->			
+					</div>
+				</div>
+			</div>
+			<div class="continue">
+				<button type="button">Checkout</button>
+			</div>
+			<!--<input type="text" placeholder='Add a Note (extra services…)'>-->
+
+		</div>	<!-- end background -->	
+		
+	</body>
+</html>
