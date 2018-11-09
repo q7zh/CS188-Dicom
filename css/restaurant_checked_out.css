@@ -3,7 +3,7 @@ body {
 }
 
 .background {
-	height: 670px;
+	height: 640px;
 	width: 375px;
 	background-color: white;
 	text-align: center;
@@ -296,7 +296,7 @@ input[type=text] {
 .Review{
 	padding-bottom: 18px;
 	margin-left:25px;
-	margin-top:70px;
+	margin-top:40px;
 	text-align:left;
 	font-family:'Helvetica';
 	font-weight:bold;
