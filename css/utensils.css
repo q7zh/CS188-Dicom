@@ -23,6 +23,7 @@ span{
 }
 
 p#title{
+	 font-family: 'Roboto';
 	text-align:center;
 	padding:5px 81px;
 	font-size: 20px;
@@ -38,11 +39,12 @@ p#title{
 }
 
 .description{
+	 font-family: 'Roboto';
 	padding-top: 10px;
 	margin-right: 60px;
 	margin-top:15px;
 	width: 80px;
-	font-size:20px;
+	font-size:18px;
 }
 .quantity {
 	padding-top: 20px;
@@ -87,9 +89,10 @@ input:focus {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
     margin: 10px 20px;
     cursor: pointer;
 	width:340px;
+	font-family: 'Roboto';
+	font-size: 20px;
 }
 

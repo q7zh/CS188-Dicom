@@ -25,3 +25,8 @@ $('.plus-btn').on('click', function(e) {
 
     $input.val(value);
 });
+
+
+function add_click(){
+	location.href = "extra_service_final.html"
+}
