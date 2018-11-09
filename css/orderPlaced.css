@@ -1,0 +1,136 @@
+.background {
+  height: 667px;
+  width: 375px;
+  background-color: #FFFFFF;
+  position: absolute;
+}
+
+.header{
+  width: 300px;
+  height: 80px;
+  X Constraint: Left;
+  Y Constraint: Top;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: underline;
+  color: black;
+  Font-Size: 30px;
+  Line Height: 56px;
+  text-align: left;
+  Fill: Solid;
+}
+
+.wrapper {
+  width: 375px;
+  margin: 0;
+}
+
+.left_footer {
+  border-radius: 10px;
+  height: 64px;
+  width: 140px;
+  background-color: #FFE651;
+  background-position: left;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+
+}
+
+.right_footer {
+  border-radius: 10px;
+  height: 64px;
+  width: 140px;
+  background-color: #FFE651;
+  background-position: right;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+  margin-left: 75px;
+}
+
+.header_with_search{
+  height: 114px;
+  width: 375px;
+  background-color: FFE651;
+  position: absolute;
+}
+
+
+.subject_style{
+  width: 375px;
+  height: 70px;
+  X Constraint: Left;
+  Y Constraint: Top;
+  font-family: "Times New Roman", Times, serif;
+   text-decoration: underline;
+  Font-Size: 25px;
+  Line Height: 56px;
+  text-align: left;
+  Fill: Solid;
+}
+
+.description_style{
+  width: 320px;
+  height: 20px;
+  X Constraint: Left;
+  Y Constraint: Top;
+  font-family: "Times New Roman", Times, serif;
+  color: grey;
+  Font-Size: 15px;
+  Line Height: 56px;
+  text-align: center;
+  Fill: Solid;
+  float: left;
+
+}
+
+.edit_style{
+  width: 55px;
+  height: 70px;
+  X Constraint: Left;
+  Y Constraint: Top;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: underline;
+  color: black;
+  Font-Size: 10px;
+  Line Height: 56px;
+  float: right;
+  Fill: Solid;
+}
+.thank_you{
+  width: 375px;
+  height: 70px;
+  X Constraint: Left;
+  Y Constraint: Top;
+  font-family: "Times New Roman", Times, serif;
+  Font-Size: 25px;
+  Line Height: 56px;
+  text-align: center;
+  Fill: Solid;
+}
+
+.small_black{
+width: 320px;
+height: 50px;
+X Constraint: Left;
+Y Constraint: Top;
+font-family: "Times New Roman", Times, serif;
+color: black;
+Font-Size: 15px;
+Line Height: 56px;
+text-align: center;
+Fill: Solid;
+float: left;
+}
+.big_grey{
+  width: 290px;
+  height: 60px;
+  X Constraint: Left;
+  Y Constraint: Top;
+  font-family: "Times New Roman", Times, serif;
+  Font-Size: 25px;
+  Line Height: 56px;
+  text-align: center;
+  color: grey;
+  Fill: Solid;
+}
