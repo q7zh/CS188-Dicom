@@ -8,6 +8,7 @@ body {
 	padding-bottom: 15px;
 	background-color: white;
 	overflow: scroll;
+	text-align: center;
 }
 
 .header {
@@ -28,7 +29,50 @@ body {
 	left: 25px;
 }
 
-.container img {
+.avatar {
+	text-align: center;
+	margin-top: 55px;
+}
+
+.question {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: 'Helvetica';
+	text-align: center;
+}
+
+.rating-stars {
+
+}
+
+.rating-stars ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rating-stars ul > li.star {
+  display: inline-block;
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size:1.7em;
+  color:#ccc;
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color:#FFCC36;
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color: #F5BB23;
+}
+
+/*img {
 	object-fit: cover;
 	opacity: 0.9;
 	z-index: -1;
@@ -72,7 +116,7 @@ body {
 .container button:hover {
 	background-color: #fcd800;
 }
-
+*/
 .time {
 	margin-top: 15px;
 	margin-left: 20px;
@@ -192,12 +236,12 @@ input[type=text] {
 	float: right;
 }
 
-.continue {
+.done {
 	margin-top: 15px;
 	text-align: center;
 }
 
-.continue button {
+.done button {
 	background-color: #FFE651;
 	text-align: center;
 	border-radius: 25px;
@@ -208,6 +252,6 @@ input[type=text] {
 	height: 42px;
 }
 
-.continue button:hover {
+.done button:hover {
 	background-color: #fcd800;
 }
