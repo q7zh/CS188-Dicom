@@ -6,27 +6,31 @@ a{
 	margin-top: 20px;
 }
 
-span{
-	display:inline-block;
-}
 
-.top_list{
-	background-color: #ffe651;
-	width: 375px;
+.header {
 	height: 64px;
+	width: 375px;
+	background-color:#FFE651;
+	font-size: 17px;
+	font-weight: bold;
+	font-family: 'Helvetica';
+	text-align: center;
+	line-height: 60px;
 }
 
-#back_button{
-	background:#ffe651;
-	border: none;
-    outline:none;
+.header .backButton{
+	position: absolute;
+	margin-top: -24px;
+	margin-left: -21px;	
+	width: 15.6px;
+	left: 25px;
 }
 
 p#title{
 	 font-family: 'Helvetica';
 	text-align:center;
 	padding:5px 81px;
-	font-size: 20px;
+	font-size: 17px;
 	margin-left:20px;
 }
 .item {
