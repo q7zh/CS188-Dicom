@@ -99,7 +99,7 @@ body {
 
 .item {
 	margin-top: 15px;
-	padding-bottom: 50px;
+	padding-bottom: 5px;
 	font-size: 15px;
 	font-family: 'Helvetica';
 	display: block;
@@ -230,17 +230,58 @@ margin-top: 20px;
 }
 
 .pic img {
-	width: 20px;
-	height: 20px;
 	margin: 20px;
+}
+.prices{
+font-family: 'Helvetica';
+color: black;
+font-size: 10px;
+align:middle;
+}
+.add_button{
+	font-family: 'Helvetica';
+	color: white;
+	float:right;
+	margin-right: 20px;
+	margin-top: 35px;
+	align:middle;
+	text-align: center;
+	border-radius: 6px;
+	border:none;
+	background-color: #FEE651;
 
 }
-
-.prices{
-	font-family: 'Helvetica';
-	color: black;
-	font-size: 14px;
-text-align: center;
-margin-left: 20px;
-margin-top: 20px;
+.progress_bar_full_first{
+	display: inline-block;
+	float:left;
+	border:none;
+	border-radius:6px;
+	background-color: #FEE651;
+	height: 12px;
+	width: 66px;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 1px;
+}
+.progress_bar_full_second{
+	float: left;
+	display: inline-block;
+	border:none;
+	border-radius:6px;
+	background-color: #FEE651;
+	height: 12px;
+	width: 66px;
+	margin-right: 4px;
+	margin-top: 1px;
+}
+.progress_bar_empty{
+	display: inline-block;
+	width: 66px;
+	height: 10px;
+	border-color: #FEE651;
+	border-style: solid;
+	background-color: white;
+	border-radius: 10px;
+	margin-right: 4px;
+	margin-top: 1px;
 }
