@@ -107,97 +107,11 @@ body {
 	border-bottom: 1px solid lightgrey;
 }
 
-.item .item-title {
-	float: left;
-	margin-left: 20px;
-	margin-top: 20px;
-}
 
-.item .item-price {
 
-	float: right;
-}
 
-.item .item-extra {
 
-	margin-top: 20px;
-	width: 335px;
-	font-size: 13px;
-}
 
-.item-extra .item-note {
-	color: #8E8E93;
-	float: left;
-}
-
-.item-extra .item-number {
-	color: #F5A623;
-	float: right;
-}
-
-input[type=text] {
-	width: 333px;
-    height: 26px;
-    margin-top: 10px;
-    margin-left: 20px;
-    padding-bottom: 10px;
-    border: 1px;
-    display: block;
-    font-size: 13px;
-    font-family: 'Helvetica';
-    border-bottom: 1px solid lightgrey;
-}
-
-*:focus {
-    outline: none;
-}
-
-.checkout {
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-bottom: 18px;
-	font-family: 'Helvetica';
-	font-size: 13px;
-	border-bottom: 1px solid lightgrey;
-}
-
-.checkout-item {
-	margin-top: 15px;
-	display: block;
-	clear: both;
-	padding-bottom: 10px;
-}
-
-.checkout-item .checkout-title {
-	float: left;
-}
-
-.checkout-item .checkout-price {
-	float: right;
-}
-
-.total {
-	margin-top: 15px;
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-bottom: 30px;
-	font-family: 'Helvetica';
-	font-size: 15px;
-	font-weight: bold;
-}
-
-.total-title {
-	float: left;
-}
-
-.total-price {
-	float: right;
-}
-
-.continue {
-	margin-top: 15px;
-	text-align: center;
-}
 
 .continue button {
 	background-color: #FFE651;

@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel= "stylesheet" type= text/css href= "orderPlaced.css">
-</head>
-<body class= "background">
+	<head>
+		<meta charset="UTF-8">
+    	<title>Dicom</title>
+    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    	<link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="./css/orderPlaced.css" rel="stylesheet" />
+	</head>
+	<body>
+		<script src="jquery/js/jquery-1.9.0.min.js"></script>
+    	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="./javascript/placeOrder.js"></script>
 
-<div class= "edit_style">Cancel Order</div>
-<br>
-<div class= "thank_you">Thank you!</div>
-<div class= "small_black">Your order was placed successfully.</div>
 
-<div class= "big_grey">Table #5</div>
-<br>
-<div class= "description_style">with Pete Barlow</div>
-<div class= "description_style">Expected arrival at 11:30 AM.</div>
-<br>
-<br>
-<div class= "small_black">Please check in once you've arrived.</div>
+		<div class="header">
+			<div class="backButton"><i class="fas fa-times"></i></div>
+			Confirmation
+		</div>
 
-<div class="wrapper">
-  <div class= "left_footer">Home</div>
-  <div class= "right_footer">Check in</div>
-</div>
+		<div class="background">
+			<div class="container">
+				<div class="bottom-left">BCD Tofu House</div>
+				<button type="button">Cancel Order</button>
+				<img src="./images/placeOrder.jpg" height="164" width="376">
+			</div>
 
-</body>
+			<div class="time">
+				<div class="time-text"><i class="far fa-clock"></i>Expected Arrival</div>
+				<div class="time-time">11:30 AM</div>
+			</div>
+			<p>
+				<div class="table">Table 5</div><div class="partner">with Pete Barlow </div>
+		  <p>
+			<div class="big_black">Thank you! </div>
+			<div class="small_black">Your order was placed successfully!</div>
+
+			<div class="check_in">Please check in once you've arrived.</div>
+
+
+
+			<div class="continue">
+				<button type="button">Check In</button>
+			</div>
+
+		</div>
+
+	</body>
 </html>
