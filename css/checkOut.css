@@ -3,7 +3,7 @@ body {
 }
 
 .background {
-	height: 640px;
+	height: 618px;
 	width: 375px;
 	background-color: white;
 	text-align: center;
@@ -303,8 +303,9 @@ input[type=text] {
 
 }
 textarea {
+	margin-top: 10px;
 	width:305px;
-	height:200px;
+	height:160px;
 	resize: none;
 	font-family:'Helvetica';
 	padding:10px;

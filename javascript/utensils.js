@@ -28,5 +28,5 @@ $('.plus-btn').on('click', function(e) {
 
 
 function add_click(){
-	location.href = "extra_service_final.html"
+	location.href = "3_servicesConfirmed.html"
 }

@@ -220,12 +220,12 @@ input[type=text] {
 	background-color: #FEE651;
 }
 .Food{
-  margin-left: 20px;
+  	margin-left: 20px;
 	padding-top: 10px;
-  padding-bottom: 5px;
-  font-family: 'Helvetica';
-  font-size: 18px;
-  font-weight: bold;
+  	padding-bottom: 5px;
+  	font-family: 'Helvetica';
+  	font-size: 18px;
+  	font-weight: bold;
 }
 .info{
 	margin-left: 20px;
@@ -236,22 +236,22 @@ input[type=text] {
 }
 .small_black{
 	margin-right: 20px;
-  margin-left: 20px;
+  	margin-left: 20px;
 	padding-top: 10px;
-  padding-bottom: 5px;
-  font-family: 'Helvetica';
-  font-size: 18px;
-  font-weight: bold;
+  	padding-bottom: 5px;
+  	font-family: 'Helvetica';
+  	font-size: 18px;
+  	font-weight: bold;
 }
 .big_black{
 	margin-right: 20px;
 	border margin-right: 20px;
-  margin-left: 20px;
+  	margin-left: 20px;
 	padding-top: 5px;
-  padding-bottom: 5px;
-  font-family: 'Helvetica';
-  font-size: 30px;
-  font-weight: bold;
+  	padding-bottom: 5px;
+  	font-family: 'Helvetica';
+  	font-size: 30px;
+  	font-weight: bold;
 }
 .table{
 	margin-right: 20px;
@@ -272,10 +272,10 @@ input[type=text] {
 .check_in{
 	margin-right: 20px;
 	border margin-right: 20px;
-  margin-left: 20px;
+  	margin-left: 20px;
 	padding-top: 5px;
-  padding-bottom: 5px;
-  font-family: 'Helvetica';
-  font-size: 15px;
+  	padding-bottom: 5px;
+  	font-family: 'Helvetica';
+  	font-size: 15px;
 	padding-bottom: 145px;
 }

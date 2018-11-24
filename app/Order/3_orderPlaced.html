@@ -5,17 +5,16 @@
     	<title>Dicom</title>
     	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-    	<link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    	<link href="./css/orderPlaced.css" rel="stylesheet" />
+    	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="../../css/orderPlaced.css" rel="stylesheet" />
 	</head>
 	<body>
-		<script src="jquery/js/jquery-1.9.0.min.js"></script>
-    	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-		<script src="./javascript/placeOrder.js"></script>
+		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
+    	<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="../../javascript/placeOrder.js"></script>
 
 
 		<div class="header">
-			<div class="backButton"><i class="fas fa-times"></i></div>
 			Confirmation
 		</div>
 
@@ -23,7 +22,7 @@
 			<div class="container">
 				<div class="bottom-left">BCD Tofu House</div>
 				<button type="button">Cancel Order</button>
-				<img src="./images/placeOrder.jpg" height="164" width="376">
+				<img src="../../images/placeOrder.jpg" height="164" width="376">
 			</div>
 
 			<div class="time">
@@ -41,7 +40,7 @@
 
 
 			<div class="continue">
-				<button type="button">Check In</button>
+				<button type="button" onclick="window.location.href='4_checkIn.html';">Check In</button>
 			</div>
 
 		</div>

@@ -71,6 +71,7 @@ p{
 .button {
     background-color: #0066cc;
     border: none;
+    border-radius: 25px;
     color: white;
     padding: 10px;
     text-align: center;
