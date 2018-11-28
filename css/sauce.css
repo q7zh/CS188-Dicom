@@ -36,23 +36,24 @@ p#title{
 	margin-left:20px;
 }
 .item {
-	padding: 20px 30px;
+	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	height: 80px;
 	display: flex;
-	width:300px;
+	width:335px;
 	border-bottom: 1px solid #E1E8EE;
 	position:relative;
-  
 }
 
 .description{
+	text-align:left;
+	padding:20px;
+	padding-top:25px;
 	font-family: 'Helvetica';
-	padding-top: 10px;
-	padding-left: 10px;
-	margin-right: 60px;
-	margin-top:15px;
 	width: 120px;
 	font-size:18px;
+	letter-spacing: -.5px;
 }
 
 
@@ -98,6 +99,7 @@ input:focus {
 
 .select_button{
 	margin-top:10px;
+	margin-right:-15px;
 	height:50px;
 	width:100px;
 	background-color:#ccddff;
@@ -105,6 +107,7 @@ input:focus {
 	border-radius: 10px;
 	font-family: 'Helvetica';
 	font-weight:bold;
+	
 	
 }
 .select_button:hover{
