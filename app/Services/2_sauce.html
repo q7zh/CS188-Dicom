@@ -4,25 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../../css/sauce.css">
+<link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-<body>
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+<meta name="robots" content="noindex,follow" />
 
+<body>
+	
 	<div class="header">
 		<div class="backButton">
-			<a href="1_extraServices.html"><i class="fas fa-chevron-left"></i></a>
+			<a href="1_extraServices.html" style="color:black;"><i class="fas fa-chevron-left"></i></a>
 		</div>
 		Sauce
 	</div>
 	<div class="background">
-		<i id="description">page not available....</i>
+	<div class="item">
+		<div class="image">
+			<img src="../../pictures/ketchup.png" height="70px">
+		</div>
+		
+		<div class="description" style="text-align:left">
+			Ketchup
+		</div>
+		
+		<input type="button" class="select_button" id="select_button" value="Select" onclick="change(this)"> </input>
+	</div>
+	
+	<div class="item">
+		<div class="image">
+			<img src="../../pictures/mayo.png" height="70px">
+		</div>
+		
+		<div class="description" style="text-align:left; letter-spacing: -1px;">
+			Mayonnaise
+		</div>
+		
+		<input type="button" class="select_button" id="select_button2" value="Select" onclick="change(this)"> </input>
+	</div>
+	
+	<div class="item">
+		<div class="image">
+			<img src="../../pictures/hotsauce.png" height="70px">
+		</div>
+		
+		<div class="description" style="text-align:left">
+			Hot Sauce
+		</div>
+		
+		<input type="button" class="select_button" id="select_button3" value="Select" onclick="change(this)"> </input>
+	</div>
+
+	
+	<button class="button" type="submit" form="nameform" value="Submit" onclick="add_click()">Add</button>    
 	</div>
 	<script>
-		function goBack() {
-			window.history.back()
+		function change(id){
+				if(id.value == "Select"){
+					id.value = "Selected";
+					id.style.backgroundColor ='#80aaff';
+				}
+				else{
+					id.value = "Select";
+					id.style.backgroundColor ='#ccddff';
+				}
+		}
+		function add_click(){
+				location.href = "3_servicesConfirmed.html"
 		}
 	</script>
-
-
+	
+	<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+	
+	
 </body>
 </html>

@@ -10,7 +10,7 @@
 	
 	<div class="header">
 		<div class="backButton">
-			<a href="2_utensils.html"><i class="fas fa-chevron-left"></i></a>
+			<button type="button" class="back" onclick=goBack()><i class="fas fa-chevron-left" ></i></button>
 		</div>
 		Extra Services
 	</div>
@@ -26,6 +26,11 @@
 
 	</div>
 
+	<script>
+		function goBack() {
+			window.history.back()
+		}
+	</script>
 
 </body>
 </html>
