@@ -52,7 +52,7 @@ body {
 	z-index: 1;
 }
 
-.container button {
+.shared_button_default {
 	position: absolute;
 	margin-left: 290px;
 	margin-top: 122px;
