@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<title>Dicom</title>
+    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="../../css/BCD_eggRoll.css" rel="stylesheet" />
+	</head>
+	<body>
+		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
+    	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="./javascript/placeOrder.js"></script>
+		<script src="./javascript/tipPage.js"></script>
+
+		<script>
+			$(document).ready(function(){
+
+   				$(".userQuantitySelection").click(function() {
+   					$(".userQuantityOptions").css('display', 'none');
+   					$("#topListItemText").html($(this).html());  
+   				});
+
+   				$(".userQuantityOptions").mouseleave(function() {
+   					$(this).css('display', ''); //resets display value to "blank"
+   					//https://stackoverflow.com/questions/1053418/jquery-temporarily-change-a-style-then-reset-to-original-class
+   				});
+
+			});
+		</script>
+
+
+		<div class="header">
+			<img src="../../images/profile.png">
+			Restaurant Menu	
+		</div>
+
+		<div class="background">
+			<div class="restaurantImage">
+				<div class="bottomLeft"></div>
+				<img src="../../images/eggRolls.jpg" height="164" width="376">
+			</div>
+
+			<div class="menuItemHeader">
+				<div class="menuItemName">Egg Rolls</div>
+				<div class="menuItemDescription">
+				Flavorful chicken egg rolls accompanied by sweet and sour sauce.
+				</div>
+			</div> <!-- End menuHeader -->
+
+			<div class="quantityDiv">
+				<div class="menuCategory" style="height:60px;">
+					<div class="quantitySelectionText">Please select quantity:</div>
+					<div class="quantitySelectionLine">
+					<!-- <div id="flex_max_container"> -->
+						<div class="quantityDropdown">
+							<nav id="quantity_dropdown_wrap">
+								<ul>
+								  <li><a id="topListItem" href="#"><span id="topListItemText">0</span>&nbsp&nbsp<i class="fas fa-caret-down"></i></a>
+								    <ul class="userQuantityOptions">
+								      <li><a class="userQuantitySelection" href="#">0</a></li>
+								      <li><a class="userQuantitySelection" href="#">1</a></li>
+								      <li><a class="userQuantitySelection" href="#">2</a></li>
+								      <li><a class="userQuantitySelection" href="#">3</a></li>
+								      <li><a class="userQuantitySelection" href="#">4</a></li>
+								      <li><a class="userQuantitySelection" href="#">5</a></li>
+									</ul>
+								  </li>
+								</ul>
+							</nav>
+						</div>	<!-- end quantityDropdown -->
+
+						<div class="quantityAmount">4 Rolls</div>
+						<div class="quantityPrice">$3</div>
+						<!-- <div class="item-number">Item-Number</div>			 -->
+					<!-- </div>	end flex_max_container -->
+				</div>  <!-- end quantitySelection -->
+			</div>  <!-- end menuCategory -->
+			<div class="continue">
+				<a href="./1_BCD_restaurantMenu.html">
+				<button type="button">Add to Cart</button>
+				</a>
+			</div>
+
+
+		</div>	<!-- end background -->	
+		
+	</body>
+</html>

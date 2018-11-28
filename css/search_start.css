@@ -34,17 +34,7 @@ body {
 	left: 25px;
 }
 
-.restaurantImage img {
-	object-fit: cover;
-	opacity: 0.9;
-	z-index: -1;
-}
 
-.restaurantImage {
-	position: relative;
-	display: inline-block;
-	text-align: center;
-}
 
 .bottomLeft {
 	position: absolute;
@@ -58,34 +48,149 @@ body {
 	z-index: 1;
 }
 
-/*.restaurantImage button {*/
-.restaurantImageAutomatedServicesButton {
-	position: absolute;
-	/*margin-left: 290px;*/
-	/*margin-top: 122px;*/
-	margin-left: 310px;
-	margin-top: 110px;
-	z-index: 1;
-	height: 24px;
-	width: 66px;
-	/*background-color: #F5A623;*/
+.searchHeader {
 	text-align: center;
-	/*border-radius: 6px;*/
-	border: none;
-	font-family: 'Helvetica';
-	font-weight: bold;
-	font-size: 13px;
-	color: white;
-	background: url('images/bellNormal.png') no-repeat;
+	border-bottom: 1px solid lightgrey;
+	margin-bottom: 10px;
+
+	/*height: 164px; */
+	height: 250px;
+	/*width: 376px;*/
+
+	/*display: block;*/
+	/*clear: both;*/
 }
 
-/*
-.restaurantImage button:hover {
+.searchHeader input[type=text] {
+      padding: 12px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+.searchHeader button {
+    background-color: #FFE651;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+
+
+	text-align: center;
+	/*border-radius: 25px;*/
+	font-size: 17px;
+	font-weight: bold;
+	width: 182px;
+	height: 42px;
+
+	color: black;
+}
+
+.searchHeader button a {
+	color: black;
+	text-decoration: none;
+}
+
+.searchHeader button:hover {
 	background-color: #fcd800;
 }
-*/
 
-.menuHeader {
+#tableShareButton {
+    background-color: #FFE651;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+
+
+	text-align: center;
+	/*border-radius: 25px;*/
+	font-size: 10px;
+	font-weight: bold;
+	width: 80px;
+	height: 22px;
+	border-radius: 10px;
+
+	color: black;
+}
+
+#timeButton {
+    background-color: #FFE651;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+
+
+	text-align: center;
+	/*border-radius: 25px;*/
+	font-size: 10px;
+	font-weight: bold;
+	width: 80px;
+	height: 22px;
+	border-radius: 10px;
+
+	color: black;
+}
+
+
+/*#search_restaurant_input {
+    border-top:thin solid  #e5e5e5;
+    border-right:thin solid #e5e5e5;
+    border-bottom:0;
+    border-left:thin solid  #e5e5e5;
+    box-shadow:0px 1px 1px 1px #e5e5e5;
+    float:left;
+    height:17px;
+    margin:.8em 0 0 .5em; 
+    outline:0;
+    padding:.4em 0 .4em .6em; 
+    width:183px; 
+}
+  
+#search_restaurant_container {
+    background-color:#f1f1f1;
+    border-top:thin solid #e5e5e5;
+    box-shadow:1px 1px 1px 1px #e5e5e5;
+    cursor:pointer;
+    float:left;
+    height:27px;
+    margin:11px 0 0 0;
+    text-align:center;
+    width:50px;
+}
+  
+#search_restaurant_container i{
+    margin:4px;
+    width:20px; 
+}*/
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ *
+ *
+ *
+ *
+ */
+
+
+/* Currently not in use */
+/*.menuHeader {
 	margin-top: 15px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -95,67 +200,21 @@ body {
 	display: block;
 	clear: both;
 	border-bottom: 1px solid lightgrey;
-}
+}*/
 
-.menuHeader .menuFoodType {
-	/*float: left;*/
-}
-
-.menuFoodType {
+/* Currently not in use */
+/*.menuFoodType {
 	text-align: center;
-}
+}*/
 
-.menuHeader .menuRatingStars {
-	/*float: right;*/
-	/*margin-left: 140px;*/
-}
 
-.menuRatingStars {
-	text-align: center;
-}
 
-/*
-.starLeftHalf {
-	color: red;
-	font-size: 24px;
-}
-
-.starRightHalf {
-	color: blue;
-	font-size: 24px;
-	transform: scaleX(-1);
-}
-*/
-
-/* https://stackoverflow.com/questions/21690979/half-star-with-css */
-.star {
-    font-size: x-large;
-    width: 20px;
-    display: inline-block;
-    color: gray;
-}
-.star:last-child {
-    margin-right: 0;
-}
-.star:before {
-    content:'\2605';
-}
-.star.on {
-    color: gold;
-}
-.star.half:after {
-    content:'\2605';
-    color: gold;
-    position: absolute;
-    margin-left: -20px;
-    width: 10px;
-    overflow: hidden;
-}
 
 .menuList {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
 
 .menuCategory {
 	margin-top: 15px;
@@ -195,6 +254,18 @@ body {
 	/*background: url('images/bellNormal.png') no-repeat;*/
 }
 
+.menuItem a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.menuItem:hover {
+    /*color:red;*/
+    background-color: #fcd800;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+
 .menuCategory .itemPrice {
 	float: right;
 	/*vertical-align: middle;*/
@@ -220,7 +291,7 @@ body {
 	float: right;
 }
 
-input[type=text] {
+/*input[type=text] {
 	width: 333px;
     height: 26px;
     margin-top: 10px;
@@ -231,7 +302,7 @@ input[type=text] {
     font-size: 13px;
     font-family: 'Helvetica';
     border-bottom: 1px solid lightgrey;
-}
+}*/
 
 *:focus {
     outline: none;
@@ -297,4 +368,9 @@ input[type=text] {
 
 .continue button:hover {
 	background-color: #fcd800;
+}
+
+.continue a {
+	color: black;
+	text-decoration: none;
 }
