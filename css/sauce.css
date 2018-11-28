@@ -1,13 +1,13 @@
 body {
 	background-color: #555;
 }
-
 .background {
 	height: 603px;
 	width: 375px;
 	padding-bottom: 15px;
 	background-color: white;
 	text-align: center;
+
 }
 
 .header {
@@ -23,13 +23,90 @@ body {
 
 .header .backButton{
 	position: absolute;
+
 	width: 15.6px;
 	left: 25px;
 }
 
+p#title{
+	 font-family: 'Helvetica';
+	text-align:center;
+	padding:5px 81px;
+	font-size: 17px;
+	margin-left:20px;
+}
+.item {
+	padding: 20px 30px;
+	height: 80px;
+	display: flex;
+	width:300px;
+	border-bottom: 1px solid #E1E8EE;
+	position:relative;
+  
+}
+
 .description{
 	font-family: 'Helvetica';
-	width: 80px;
+	padding-top: 10px;
+	margin-right: 60px;
+	margin-top:15px;
+	width: 120px;
 	font-size:18px;
 }
+
+
+button[class*=btn] {
+	width: 30px;
+	height: 30px;
+	background-color: #E1E8EE;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+.minus-btn img {
+	margin-bottom: 3px;
+}
+.plus-btn img {
+	margin-top: 2px;
+}
+ 
+button:focus,
+input:focus {
+	outline:0;
+}
+
+.button {
+    background-color: #0066cc;
+    border: none;
+    color: white;
+	padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+	width:340px;
+	font-family: 'Helvetica';
+	font-size: 20px;
+	margin-top:200px;
+	border-radius: 25px;
+}
+.button:hover{
+	background-color:#003399
+}
+
+
+.select_button{
+	height:50px;
+	width:100px;
+	background-color:#ccddff;
+	border:none;
+	border-radius: 10px;
+	font-family: 'Helvetica';
+	font-weight:bold;
+	
+}
+.select_button:hover{
+	background-color:#80aaff
+}
+ 
 
