@@ -73,7 +73,7 @@ p.second{
     font-size:20px;
     cursor: pointer;
 	width:340px;
-	border-radius: 12px;
+	border-radius: 25px;
 }
 .button:hover{
 	background-color:#003399
