@@ -10,12 +10,13 @@ body {
 	text-align: center;
 }
 
-a{
+a:not(#special){
     text-decoration: none;
 	width: 25px;
     display: inline-block;
     padding: 8px 16px;	
 	margin-top: 20px;
+	color: black;
 }
 
 .header {

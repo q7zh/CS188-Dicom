@@ -5,7 +5,7 @@ body {
 .background {
 	height: 603px;
 	width: 375px;
-	padding-bottom: 15px;
+	padding-top: 20px;
 	background-color: white;
 	text-align: center;
 }
@@ -32,4 +32,49 @@ body {
 	width: 80px;
 	font-size:18px;
 }
+
+
+.Review{
+	padding-bottom: 18px;
+	margin-left:25px;
+	margin-top:40px;
+	text-align:left;
+	font-family:'Helvetica';
+	font-weight:bold;
+
+}
+textarea {
+	margin-top: 10px;
+	width:305px;
+	height:305px;
+	resize: none;
+	font-family:'Helvetica';
+	padding:10px;
+	font-size:15px;
+}
+
+button:focus,
+input:focus {
+	outline:0;
+}
+
+.button {
+    background-color: #0066cc;
+    border: none;
+    color: white;
+	padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+	width:340px;
+	font-family: 'Helvetica';
+	font-size: 20px;
+	margin-top:130px;
+}
+.button:hover{
+	background-color:#003399
+}
+
+
 
