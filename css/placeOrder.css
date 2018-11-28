@@ -7,6 +7,7 @@ body {
 	width: 375px;
 	padding-bottom: 15px;
 	background-color: white;
+	overflow:scroll;
 }
 
 .header {
@@ -99,12 +100,13 @@ body {
 
 .item {
 	margin-top: 15px;
-	padding-bottom: 50px;
 	font-size: 15px;
 	font-family: 'Helvetica';
 	display: block;
 	clear: both;
 	border-bottom: 1px solid lightgrey;
+	height: 50px;
+	width: 330px;
 }
 
 .item .item-title {
@@ -116,9 +118,10 @@ body {
 }
 
 .item .item-extra {
-	position: absolute;
+	position: relative;
 	margin-top: 20px;
-	width: 335px;
+	padding-top:30px;
+	width: 330px;
 	font-size: 13px;
 }
 
