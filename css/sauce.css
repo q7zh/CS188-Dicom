@@ -96,6 +96,7 @@ input:focus {
 
 
 .select_button{
+	margin-top:10px;
 	height:50px;
 	width:100px;
 	background-color:#ccddff;
