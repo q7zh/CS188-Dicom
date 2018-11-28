@@ -7,6 +7,9 @@
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     	<link href="../../css/placeOrder.css" rel="stylesheet" />
+			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
 	</head>
 	<body>
 		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
@@ -16,7 +19,7 @@
 
 		<div class="header">
 			<div class="backButton"><i class="fas fa-times"></i></div>
-			Place Order		
+			Place Order
 		</div>
 
 		<div class="background">
@@ -26,56 +29,29 @@
 				<img src="../../images/placeOrder.jpg" height="164" width="376">
 			</div>
 
-			<div class="time">
-				<div class="time-text"><i class="far fa-clock"></i> Expected Arrival</div>				
-				<div class="time-time">11:30 AM</div>	
+			<div id="time" class="time">
+
 			</div>
 
-			<div class="orderList">
-				<div class="item">
-					<div class="item-title">Fried Mandu</div>
-					<div class="item-price">$6</div>
-					<div class="item-extra">
-						<div class="item-note">Vinegar</div>
-						<div class="item-number">2 Servings</div>
-					</div>					
-				</div>
-				<div class="item">
-					<div class="item-title">Tofu Stew</div>
-					<div class="item-price">$12</div>
-					<div class="item-extra">
-						<div class="item-note">Spicy Sauce</div>
-					</div>			
-				</div>
+			<div id="orderList" class="orderList">
+
 			</div>
 
 			<input type="text" placeholder='Add a Note (extra services…)'>
 
-			<div class="checkout">
-				<div class="checkout-item">
-					<div class="checkout-title">Subtotal</div>
-					<div class="checkout-price">$18</div>
-				</div>
-				<div class="checkout-item">
-					<div class="checkout-title">Tax</div>
-					<div class="checkout-price">$1.71</div>
-				</div>
-				<div class="checkout-item">
-					<div class="checkout-title">Booking Fee</div>
-					<div class="checkout-price">$4.99</div>
-				</div>
+			<div id="checkout" class="checkout">
+
 			</div>
 
-			<div class="total">
-				<div class="total-title">Total</div>
-				<div class="total-price">$24.7</div>
+			<div id="total" class="total">
+
 			</div>
 
 			<div class="continue">
 				<button type="button" onclick="window.location.href='2_reviewOrder.html';">Continue</button>
 			</div>
 
-		</div>		
-		
+		</div>
+
 	</body>
 </html>
