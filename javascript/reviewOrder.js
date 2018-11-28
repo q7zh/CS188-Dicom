@@ -23,45 +23,35 @@ $( document ).ready(function() {
 
   readData();
 
+	// // write data to database
+	// function writeData(cur_title, cur_price, cur_quantity, cur_notes) {
+	// 	db.collection("Items").add({
+	//     	title: cur_title,
+	//     	price: cur_price,
+	//     	quantity: cur_quantity,
+	//     	notes: cur_notes,
+	// 	})
+	// 	.catch(function(error) {
+  //   		console.error("Error adding document: ", error);
+	// 	});
+	// }
+
   var subTotal = 0;
   var tax = 0;
   var bookingFee = 0;
   var total = 0;
 
-  function writeData(cur_subtotal, cur_tax, cur_bookingFee, cur_total) {
-    db.collection("orderTotal").add({
-        subtotal: cur_subtotal,
-        tax: cur_tax,
-        bookingFee: cur_bookingFee,
-        total: cur_total
-
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
-  }
-
 	// read data from database
 	function readData() {
-		db.collection("Items").orderBy("time").get().then((querySnapshot) => {
+		db.collection("orderTotal").get().then((querySnapshot) => {
     		querySnapshot.forEach((doc) => {
 
         // read item data
 				var data = doc.data();
-				var cur_title = data.title;
-				var cur_price = data.price;
-				var cur_quantity = data.quantity;
-				var cur_notes = data.notes;
-
-        subTotal += Math.round(data.price * 100) / 100;
-
-        var serving = "";
-
-        if (cur_quantity == 1) {
-          serving = " Serving";
-        } else {
-          serving = " Servings";
-        }
+				var cur_subtotal = data.subtotal;
+				var cur_tax = data.tax;
+				var cur_bookingFee = data.bookingFee;
+				var cur_total = data.total;
 
         $('#orderList').append('<div class="item">' +
 					'<div class="item-title">' +
@@ -136,8 +126,6 @@ $( document ).ready(function() {
           '<div class="total-title">Total</div>' +
           '<div class="total-price">$' + total + '</div>'
         )
-
-        writeData(subTotal, tax, bookingFee, total);
 
 		});
 	}
