@@ -71,6 +71,7 @@ input:focus {
 	font-family: 'Helvetica';
 	font-size: 20px;
 	margin-top:130px;
+	border-radius: 25px;
 }
 .button:hover{
 	background-color:#003399
