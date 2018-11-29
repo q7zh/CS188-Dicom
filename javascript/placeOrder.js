@@ -63,7 +63,8 @@ $( document ).ready(function() {
           serving = " Servings";
         }
 
-        $('#orderList').append('<div class="item">' +
+        $('#orderList').append( '<a href="../Order/6_editItem.html">' +
+          '<div class="item">' +
 					'<div class="item-title">' +
           cur_title + '</div>' +
 					'<div class="item-price">$' + cur_price + '</div>' +
@@ -71,7 +72,7 @@ $( document ).ready(function() {
 					'<div class="item-note">' + cur_notes + '</div>' +
 					'<div class="item-number">' + cur_quantity + serving + '</div>' +
 					'</div>' +
-				  '</div>');
+				  '</div>' + '</a>');
     		});
 
         tax = Math.round( 0.095 * subTotal * 100) / 100;
