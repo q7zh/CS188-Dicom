@@ -36,25 +36,13 @@ body {
 
 
 
-.bottomLeft {
-	position: absolute;
-	margin-left: 10px;
-	margin-top: 120px;
-	font-weight: bold;
-	font-size: 25px;
-	font-family: 'Helvetica';
-	color: white;
-	text-shadow: 2px 2px 4px #000000;
-	z-index: 1;
-}
-
 .searchHeader {
 	text-align: center;
 	border-bottom: 1px solid lightgrey;
 	margin-bottom: 10px;
 
 	/*height: 164px; */
-	height: 250px;
+	height: 200px;
 	/*width: 376px;*/
 
 	/*display: block;*/
@@ -91,6 +79,24 @@ body {
 .searchHeader button:hover {
 	background-color: #fcd800;
 }
+
+#search_location_input, #search_restaurant_input {
+	border-radius: 25px;
+	width: 80%;
+}
+
+#searchButtonsContainer {
+	padding-top: 5px;
+	float: left;
+	position: relative;
+	left: 50px;
+}
+
+#searchButtonsContainer input[type=button] {
+	width: 13em;
+	height: 30px;
+}
+
 
 #tableShareButton {
     background-color: #FFE651;
@@ -132,6 +138,14 @@ body {
 	border-radius: 10px;
 
 	color: black;
+}
+
+#tableShareButton:hover {
+	background-color: #fcd800;
+}
+
+#timeButton:hover {
+	background-color: #fcd800;
 }
 
 
@@ -389,7 +403,7 @@ body {
   display: grid;
   /*border: 1px solid black;*/
   max-width: 800px;
-  grid-template-columns: 1fr 4fr 8fr 5fr;
+  grid-template-columns: 4fr 8fr 5fr;
   grid-gap: 5px;
   padding: 10px;
   /*background-color: rgba(0, 0, 0, .05);*/
@@ -409,7 +423,7 @@ body {
 
 .linebreak {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 4;
   grid-row-start: 2;
   border-bottom: 2px solid lightgrey;
 }

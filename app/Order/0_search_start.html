@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
     	<title>Dicom</title>
-    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="../../jquery/css/jquery.timepicker.min.css" rel="stylesheet" />
     	<link href="../../css/search_start.css" rel="stylesheet" />
 	</head>
 	<body>
@@ -13,6 +14,7 @@
     	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 		<script src="./javascript/placeOrder.js"></script>
 		<script src="./javascript/tipPage.js"></script>
+		<script src="../../jquery/js/jquery.timepicker.min.js"></script>
 
 		<script>
 			$(document).ready(function(){
@@ -47,40 +49,58 @@
     			});
     			//https://stackoverflow.com/questions/2459153/alternative-to-jquerys-toggle-method-that-supports-eventdata
 
+    			$('input.timepicker').timepicker({
+    				    timeFormat: 'h:mm p',
+					    interval: 60,
+					    minTime: '12',
+					    maxTime: '8:00pm',
+					    defaultTime: '12',
+					    startTime: '12:00',
+					    dynamic: false,
+					    dropdown: true
+    			});
+
 			});
 	
 		</script>
 
 
 		<div class="header">
-			<img src="../../images/profile.png">
-			Search for a Restaurant
+			Search
 		</div>
 
 		<div class="background">
 			
 			<div class="searchHeader">
-				<div class="bottomLeft"></div>
-				<div id="search_location_container">
+				<form action="./0_search_Korean.html">
+				<div id="search_location_container" style="padding-top:5px">
 					<i class="fas fa-map-marker-alt"></i>
-			    	<input id="search_location_input" type="text" autocomplete="off" placeholder="Current Location" name="username" required>
+			    	<input id="search_location_input" type="text" autocomplete="off" placeholder="Current Location" name="location" required />
 			    </div>
 
 			    <div id="search_restaurant_container">
 			    	<i class="fas fa-search"></i>
-			    	<input id="search_restaurant_input" type="text" autocomplete="off" placeholder="Search for something!" name="password" required>
+			    	<input id="search_restaurant_input" type="text" autocomplete="off" placeholder="Search for something!" name="searchTerm" required />
 			    </div> 
+			    
+			    <input type="submit" style="display: none;"/> <!-- allows us to hit enter-key to submit -->
+			    <!-- https://stackoverflow.com/questions/4196681/form-not-submitting-when-pressing-enter -->
+			    </form>
 
-			    <button type="submit"><a href="./0_search_Korean.html">Go</a></button>
-
-			 	<div style="padding: 10px">
+			 	<div id="searchButtonsContainer">
 				    <span>
 				    	<input type="button" id="tableShareButton" value="Table Share" style="padding: 0px;"/>
 				    </span>
 
 				    <span>
-				    	<input type="button" id="timeButton" value="12:30pm" style="padding: 0px;"/>
+    					<input type="button" id="timeButton" class="timepicker" name="time" style="padding: 0px; position: relative; left: 10px" />
+				    	<!-- <input type="button" id="timeButton" value="12:30pm" style="padding: 0px; position: relative; left: 10px"/> -->
 				    </span>
+
+				    <span>
+
+				    </span>
+
 				</div>
 			</div>
 

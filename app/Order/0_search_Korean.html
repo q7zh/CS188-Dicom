@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
     	<title>Dicom</title>
-    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="../../jquery/css/jquery.timepicker.min.css" rel="stylesheet" />
     	<link href="../../css/search_Korean.css" rel="stylesheet" />
 	</head>
 	<body>
@@ -13,6 +14,7 @@
     	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 		<script src="./javascript/placeOrder.js"></script>
 		<script src="./javascript/tipPage.js"></script>
+		<script src="../../jquery/js/jquery.timepicker.min.js"></script>
 
 		<script>
 			$(document).ready(function(){
@@ -47,6 +49,17 @@
     			});
     			//https://stackoverflow.com/questions/2459153/alternative-to-jquerys-toggle-method-that-supports-eventdata
 
+    			$('input.timepicker').timepicker({
+    				    timeFormat: 'h:mm p',
+					    interval: 60,
+					    minTime: '12',
+					    maxTime: '8:00pm',
+					    defaultTime: '12',
+					    startTime: '12:00',
+					    dynamic: false,
+					    dropdown: true
+    			});
+
 			});
 	
 		</script>
@@ -57,16 +70,16 @@
 				<a href="./0_search_start.html"><i class="fas fa-chevron-left"></i></a>
 			</div>
 			<!-- <img src="../../images/profile.png"> -->
-			Search for a Restaurant
+			Search
 		</div>
 
 		<div class="background">
 			
 			<div class="searchHeader">
 				<div class="bottomLeft"></div>
-				<div id="search_location_container">
+				<div id="search_location_container" style="padding-top:5px">
 					<i class="fas fa-map-marker-alt"></i>
-			    	<input id="search_location_input" type="text" autocomplete="off" placeholder="Current Location" name="username" required>
+			    	<input id="search_location_input" type="text" autocomplete="off" placeholder="Current Location" name="username" required />
 			    </div>
 
 			    <div id="search_restaurant_container">
@@ -74,16 +87,14 @@
 			    	<input id="search_restaurant_input" type="text" autocomplete="off" placeholder="Korean" name="password" required>
 			    </div> 
 
-			    <button type="submit">Go</button>
-
-			 	<div style="padding: 10px">
+			 	<div id="searchButtonsContainer">
 			 	<!-- https://stackoverflow.com/questions/2883373/simple-css-text-wont-center-in-a-button -->
 				    <span>
 				    	<input type="button" id="tableShareButton" value="Table Share" style="padding: 0px;"/>
 				    </span>
 
 				    <span>
-				    	<input type="button" id="timeButton" value="12:30pm" style="padding: 0px;" />
+    					<input type="button" id="timeButton" class="timepicker" name="time" style="padding: 0px; position: relative; left: 10px" />
 				    </span>
 				</div>
 			</div>
@@ -134,9 +145,6 @@
 
 			<div class="wrapper">
 			  <div class="grid">
-			  	<div class="listNumber">
-			  		<p><b>1.</b></p>
-			    </div>
 			    <div class="photo">
 			    <a href="./1_BCD_restaurantMenu.html">
 			      <img src="../../images/placeOrder.jpg" height="80" width="80">
@@ -162,9 +170,6 @@
 			    </div> -->
 			    <div class="linebreak"></div>
 			    
-			    <div class="listNumber">
-			  		<p><b>2.</b></p>
-			    </div>
 			     <div class="photo">
 			      <img src="../../images/bibibop.jpg" height="80" width="80">
 			    </div>
@@ -182,9 +187,6 @@
 
 			    <div class="linebreak" style="grid-row-start: 4;"></div>
 			    
-			    <div class="listNumber">
-			  		<p><b>3.</b></p>
-			    </div>
 			     <div class="photo">
 			      <img src="../../images/yupduk.png" height="80" width="80">
 			    </div>
@@ -202,9 +204,6 @@
 
 			    <div class="linebreak" style="grid-row-start: 6;"></div>
 			    
-			    <div class="listNumber">
-			  		<p><b>4.</b></p>
-			    </div>
 			     <div class="photo">
 			      <img src="../../images/kbbq_4thst.jpg" height="80" width="80">
 			    </div>
