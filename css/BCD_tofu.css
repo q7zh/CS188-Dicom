@@ -335,6 +335,7 @@ input[type=text] {
 	cursor: pointer;
 }
 
+/* https://www.w3schools.com/howto/howto_css_loader.asp */
 .loader {
 	position: absolute;
   	left: 110px;
