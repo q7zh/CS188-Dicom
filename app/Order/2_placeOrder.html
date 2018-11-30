@@ -27,7 +27,7 @@
 
 		<div class="background">
 			<div class="container">
-				<div class="bottom-left">BCD Tofu House</div>
+				<div class="bottom-left" id="restaurant">BCD Tofu House</div>
 				<input type="button" class="shared_button_default" id="shared_button" value="Shared" onclick="change()" ></input>
 				<img src="../../images/placeOrder.jpg" height="164" width="376">
 			</div>
@@ -38,7 +38,7 @@
 			<div id="orderList" class="orderList">
 			</div>
 
-			<input type="text" placeholder='Add a Note (extra services…)'>
+			<input type="text" id="notes" placeholder='Add a Note (extra services…)'>
 
 			<div id="checkout" class="checkout">
 			</div>
@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="continue">
-				<button type="button" id="continue" onclick="window.location.href='3_reviewOrder.html';">Continue</button>
+				<button type="button" id="continue" onclick="change()">Continue</button>
 			</div>
 
 		</div>

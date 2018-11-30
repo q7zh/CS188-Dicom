@@ -51,31 +51,10 @@ body {
 	z-index: 1;
 }
 
-.container button {
-	position: absolute;
-	margin-left: 290px;
-	margin-top: 122px;
-	z-index: 1;
-	height: 24px;
-	width: 66px;
-	background-color: #F5A623;
-	text-align: center;
-	border-radius: 6px;
-	border: none;
-	font-family: 'Helvetica';
-	font-weight: bold;
-	font-size: 10px;
-	color: white;
-}
-
-.container button:hover {
-	background-color: #fcd800;
-}
-
 .time {
 	margin-top: 15px;
 	margin-left: 20px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 	font-size: 15px;
 	font-family: 'Helvetica';
 	display: inline-block;
@@ -97,13 +76,82 @@ body {
 	margin-right: 20px;
 }
 
+.avatar {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.circle {
+	border: 0.5px solid #FFE651;
+	border-radius: 100px;
+	display: inline-block;
+}
+
+.avatar img {
+	margin: 6px 6px 2px 6px;
+
+}
+
+.question {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: 'Helvetica';
+	text-align: center;
+}
+
+.summary {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.summary-title {
+	display: inline-block;
+	padding-top: 20px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	font-weight: bold;
+	font-size: 22px;
+	font-family: 'Helvetica';
+}
+
+.summary button {
+/*	position: absolute;*/
+	margin-right: 20px;
+	margin-left: 80px;
+	margin-top: 10px;
+	z-index: 1;
+	height: 24px;
+	width: 66px;
+	background-color: #ff6666;
+	text-align: center;
+	border-radius: 6px;
+	border: none;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 13px;
+	color: white;
+}
+
+.summary button:hover {
+	background-color: #ef4040;
+}
+
 .item {
 	margin-top: 15px;
-	padding-bottom: 50px;
+	margin-left: 20px;
 	font-size: 15px;
 	font-family: 'Helvetica';
 	display: block;
 	clear: both;
+	height: 25px;
+	width: 255px;
 }
 
 .item .item-title {
@@ -112,80 +160,11 @@ body {
 
 .item .item-price {
 	float: right;
-}
-
-.item .item-extra {
-	position: absolute;
-	margin-top: 20px;
-	width: 335px;
-	font-size: 13px;
-}
-
-.item-extra .item-note {
-	color: #8E8E93;
-	float: left;
-}
-
-.item-extra .item-number {
-	color: #F5A623;
-	float: right;
-}
-
-input[type=text] {
-	width: 333px;
-    height: 26px;
-    margin-top: 10px;
-    margin-left: 20px;
-    padding-bottom: 10px;
-    border: 1px;
-    display: block;
-    font-size: 13px;
-    font-family: 'Helvetica';
+	font-weight: bold;
 }
 
 *:focus {
     outline: none;
-}
-
-.checkout {
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-bottom: 18px;
-	font-family: 'Helvetica';
-	font-size: 13px;
-}
-
-.checkout-item {
-	margin-top: 15px;
-	display: block;
-	clear: both;
-	padding-bottom: 10px;
-}
-
-.checkout-item .checkout-title {
-	float: left;
-}
-
-.checkout-item .checkout-price {
-	float: right;
-}
-
-.total {
-	margin-top: 15px;
-	margin-left: 20px;
-	margin-right: 20px;
-	padding-bottom: 30px;
-	font-family: 'Helvetica';
-	font-size: 15px;
-	font-weight: bold;
-}
-
-.total-title {
-	float: left;
-}
-
-.total-price {
-	float: right;
 }
 
 .continue {
@@ -207,27 +186,9 @@ input[type=text] {
 .continue button:hover {
 	background-color: #fcd800;
 }
-/*.edit_button{
-	font-family: 'Helvetica';
-	color: white;
-	float:right;
-	margin-right: 20px;
-	align:middle;
-	text-align: center;
-	border-radius: 6px;
-	border:none;
-	background-color: #FEE651;
-}
-.Food{
-  	margin-left: 20px;
-	padding-top: 10px;
-  	padding-bottom: 5px;
-  	font-family: 'Helvetica';
-  	font-size: 18px;
-  	font-weight: bold;
-}*/
+
 .info{
-	margin-top: 80px;
+	margin-top: 30px;
 	text-align: center;
 }
 
@@ -271,12 +232,11 @@ input[type=text] {
 }
 
 .check_in{
+	color: #ff6666;
 	margin-right: 20px;
 	border margin-right: 20px;
   	margin-left: 20px;
 	padding-top: 5px;
-  	padding-bottom: 5px;
   	font-family: 'Helvetica';
   	font-size: 15px;
-	padding-bottom: 80px;
 }

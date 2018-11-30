@@ -2,6 +2,10 @@ body {
 	background-color: #555;
 }
 
+button:focus {
+	outline: 0;
+}
+
 .background {
 	height: 603px;
 	width: 375px;

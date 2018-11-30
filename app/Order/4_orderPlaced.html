@@ -15,7 +15,7 @@
 	<body>
 		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
     	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-		<script src="../../javascript/placeOrder.js"></script>
+		<script src="../../javascript/orderPlaced.js"></script>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
@@ -24,28 +24,38 @@
 		</div>
 
 		<div class="background">
-			<div class="container">
-				<div class="bottom-left">BCD Tofu House</div>
-
-				<button id="Items" type="button" onclick="window.location.href='../../app/Search/2_search_list.html';" >Cancel Order</button>
-
-				<img src="../../images/placeOrder.jpg" height="164" width="376">
+		  	<div class="avatar">
+				<div class="circle">
+					<img src="../../images/pete2.png" height="100" width="100">
+				</div>
 			</div>
 
-			<div id='time' class="time">
-				<!-- <div class="time-text"><i class="far fa-clock"></i>Expected Arrival</div>
-				<div class="time-time">'time'</time> </div> -->
+			<div class="question">
+				Pete Barlow will join your meal!
 			</div>
 
-			<p>
-				<div class="table">Table 5</div><div class="partner">with Pete Barlow </div>
-		  	</p>
-
-		  	<div class="info">
-				<div class="big_black">Thank you! </div>
-				<div class="small_black">Your order was placed successfully!</div>
-				<div class="check_in">Please check in once you've arrived.</div>
+			<div class="summary">
+				<div class="container">
+					<div class="summary-title">Summary</div>
+					<button id="Items" type="button" onclick="window.location.href='../../index.html';">Cancel</button>
+				</div>
+				<div class="item">
+					<div class="item-title">Restaurant</div>
+					<div class="item-price" id="title"></div>
+				</div>
+				<div class="item">
+					<div class="item-title">Expected Arrival</div>
+					<div class="item-price" id="time"></div>
+				</div>
+				<div class="item">
+					<div class="item-title">Table</div>
+					<div class="item-price">#5</div>
+				</div>
+				<div class="info">
+					<div class="check_in">Please check in once you've arrived</div>
+				</div>
 			</div>
+
 
 			<div class="continue">
 				<button type="button" onclick="window.location.href='5_checkIn.html';">Check In</button>
