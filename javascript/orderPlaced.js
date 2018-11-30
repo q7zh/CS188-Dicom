@@ -31,8 +31,8 @@ $( document ).ready(function() {
 
 	// read data from database
 	function readData() {
-    db.collection("extraInfo").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+    db.collection("extraInfo").doc("kevin's_sickass_extraInfo").get().then(function(doc) {
+        if (doc && doc.exists) {
 
           // read item data
           var data = doc.data();
@@ -42,7 +42,7 @@ $( document ).ready(function() {
           $('#time').html(cur_expectedTime)
 
           $('#title').html(cur_restaurant)
-      });
+      };
     });
 	}
 

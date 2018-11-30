@@ -117,8 +117,8 @@ $( document ).ready(function() {
         console.log("Error loading item document from Firestore: ", error);
     });
 
-    db.collection("extraInfo").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+    db.collection("extraInfo").doc("kevin's_sickass_extraInfo").get().then(function(doc) {
+        if (doc && doc.exists) {
 
           // read item data
           var data = doc.data();
@@ -143,7 +143,7 @@ $( document ).ready(function() {
 
           $('#title').html(cur_restaurant)
 
-      });
+      };
     });
   }
 

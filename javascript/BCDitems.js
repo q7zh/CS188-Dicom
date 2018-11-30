@@ -103,6 +103,8 @@ $(document).ready(function(){
     getDocForItem(db, ITEMNAME).then(docRef => {
     	console.log("Printing from main loop");
 		console.log(docRef);
+		console.log(ITEMNAME);
+		console.log(db);
 
        // Load from database
        docRef.get().then(function(doc) {
