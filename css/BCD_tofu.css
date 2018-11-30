@@ -28,6 +28,10 @@ body {
 	left: 25px;
 }
 
+.header .backButton a {
+	color: inherit;
+}
+
 .header img {
 	position: absolute;
 	margin-top: 20px;
@@ -136,7 +140,7 @@ body {
 }
 
 .quantitySelectionLine > div {
-  width: 100px;
+  /*width: 100px;*/
   height: 50px;
   /*border: 2px dashed red;*/
 }
@@ -146,7 +150,7 @@ body {
 	float: right;
 	vertical-align: middle;
 	margin-top: 18px; /* this is cheating */
-	/*margin-right: 30px; */
+	margin-left: 30px;
 	font-size: 18px;
 }
 
@@ -177,8 +181,8 @@ body {
 input[type=text] {
 	width: 333px;
     height: 26px;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 15px;
+    /*margin-left: 20px;*/
     padding-bottom: 10px;
     border: 1px;
     display: block;
@@ -196,7 +200,7 @@ input[type=text] {
 /*   DROPDOWN Related CSS   */
 /*                          */
 
-#quantity_dropdown_wrap
+/*#quantity_dropdown_wrap
 {
 	margin-top:15px
 }
@@ -273,16 +277,57 @@ input[type=text] {
 	padding:10px 15px
 }
 
-/* When the top list item, ie "Quantity" is being hovered over,
-   display the ul below it                                  */
+   When the top list item, ie "Quantity" is being hovered over,
+   display the ul below it                                  
 #quantity_dropdown_wrap ul li:hover > ul
 {
 	display:block
-}
+}*/
 
 /*                          */
 /* END DROPDOWN Related CSS */
 /*                          */
+
+
+.quantityPlusMinus {
+	position: relative;
+	right: 20px;
+	/*padding-top: 20px;
+	margin-left: 200px;
+	position:absolute;*/ 
+}
+.quantityPlusMinus input {
+	-webkit-appearance: none;
+	border: none;
+	text-align: center;
+	width: 32px;
+	font-size: 16px;
+	color: #43484D;
+	font-weight: 300;
+	display: inline;
+}
+
+button[class*=btn] {
+	width: 30px;
+	height: 30px;
+	background-color: #E1E8EE;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+.minus-btn img {
+	margin-bottom: 3px;
+}
+.plus-btn img {
+	margin-top: 2px;
+}
+
+
+
+
+
+
+
 
 
 #flex_max_container {
@@ -309,6 +354,25 @@ input[type=text] {
   /*line-height:6em;*/
 
   text-align: center;
+}
+
+
+.Notes{
+	padding-bottom: 18px;
+	margin-top:65px;
+	text-align:left;
+	font-family:'Helvetica';
+	font-weight:bold;
+
+}
+textarea {
+	margin-top: 10px;
+	width:305px;
+	height:80px;
+	resize: none;
+	font-family:'Helvetica';
+	padding:10px;
+	font-size:15px;
 }
 
 

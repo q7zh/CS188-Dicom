@@ -24,12 +24,18 @@
 				///////////////////////////////////////////////////////////////////
 				//Constants and functions to set up
 				const DOCUMENTNAME = "BCD";
+				const ITEMTITLE = "tofu";
 
 				async function saveToDB(myDocRef) {
 					console.log("Initiating save to Firestore...");
+					console.log($("#selectedQuantityValue").attr("value"));
 
+					//See editItem.js for details on DB scheme
 					await myDocRef.set({
-						tofu: $("#topListItemText").html()
+						cur_title: ITEMTITLE,
+						cur_price: 6,
+						cur_quantity: $("#selectedQuantityValue").attr("value")
+						//cur_quantity: $("#topListItemText").html()
 						//To do: Also do this for "tofu_note"
 					}).then(function() {
 						console.log("Status saved!");
@@ -63,16 +69,17 @@
 		       docRef.get().then(function(doc) {
 		       	if (doc && doc.exists) {
 		       		const myData = doc.data();
-		       		if (myData.tofu == undefined)
-		       			$("#topListItemText").html("0");
+		       		if (myData.cur_quantity == undefined)
+		       			$("#selectedQuantityValue").attr("value", "0");
+		       			//$("#topListItemText").html("0");
 		       		else 
-		       			$("#topListItemText").html(myData.tofu);
+		       			$("#selectedQuantityValue").attr("value", myData.cur_quantity);
 		       		//Also set the tofu_note  
 		       	}
 		       	else
 		       	{
 		       		console.log("Document in Firestore not found!");
-		       		$("#topListItemText").html("0");
+		       		$("#selectedQuantityValue").attr("value", "0");
 		       	}
 		       }).catch(function (error) {
 		       	console.log("Got an error loading from Firestore: ", error)
@@ -99,6 +106,7 @@
    					console.log("After saveToDB() call");
 
    					//Load next page
+   					//Refernece: https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
    					var form = $('<form></form>');
 
 				    form.attr("method", "get");
@@ -109,6 +117,7 @@
 				    //	"key2": "value2"
 				    //};
 
+				    //http://api.jquery.com/jquery.each/
 				    //$.each(parameters, function(key, value) {
 				    //    var field = $('<input></input>');
 
@@ -125,18 +134,14 @@
 				    form.submit();
 				})
 
-   				//Perform on document unload
-   				//$(window).unload(function() {
-   				//	console.log("Page being unloaded!")
-   				//	saveToDB(docRef);
-   				//})
-
 			});
 		</script>
 
 
 		<div class="header">
-			<img src="../../images/profile.png">
+			<div class="backButton">
+				<a href="0_BCD_restaurantMenu.html"><i class="fas fa-chevron-left"></i></a>
+			</div>
 			Restaurant Menu	
 		</div>
 
@@ -154,11 +159,16 @@
 			</div> <!-- End menuHeader -->
 
 			<div class="quantityDiv">
-				<div class="menuCategory" style="height:60px;">
+				<div class="menuCategory" style="height:175px;">
 					<div class="quantitySelectionText">Please select quantity:</div>
 					<div class="quantitySelectionLine">
 					<!-- <div id="flex_max_container"> -->
-						<div class="quantityDropdown">
+						<div class="quantityPlusMinus" style="width: 150px">
+							<button class="plus-btn" type="button" name="button">+</button>
+							<input type="text" name="name" id="selectedQuantityValue" value="">
+							<button class="minus-btn" type="button" name="button">-</button>
+						</div>
+						<!-- <div class="quantityDropdown">
 							<nav id="quantity_dropdown_wrap">
 								<ul>
 								  <li><a id="topListItem" href="#"><span id="topListItemText"></span>&nbsp&nbsp<i class="fas fa-caret-down"></i></a>
@@ -173,19 +183,17 @@
 								  </li>
 								</ul>
 							</nav>
-						</div>	<!-- end quantityDropdown -->
-						<!-- <div>
-				  			<p>2</p>
-				 		</div>
-
-				  		<div>
-				  			<p>3</p>
-				  		</div> -->
-						<div class="quantityAmount">Combo</div>
-						<div class="quantityPrice">$6</div>
+						</div>	--> <!-- end quantityDropdown -->
+	
+						<div class="quantityAmount" style="width: 75px">Combo</div>
+						<div class="quantityPrice" style="width: 75px">$6</div>
 						<!-- <div class="item-number">Item-Number</div>			 -->
 					<!-- </div>	end flex_max_container -->
 				</div>  <!-- end quantitySelection -->
+
+				<div class="Notes">
+					<textarea rows="9" placeholder="Please leave any additional notes here"></textarea>
+				</div>
 			</div>  <!-- end menuCategory -->
 
 			<div class="addToCartContainer">
@@ -215,5 +223,42 @@
 
 		</div>	<!-- end background -->	
 		
+    	<script>
+    	//Copied and pasted from utensils.js, with a few changes...
+    		$('.minus-btn').on('click', function(e) {
+			    e.preventDefault();
+			    var $this = $(this);
+			    var $input = $this.closest('div').find('input');
+			    var value = parseInt($input.val());
+			    if (value > 1) {
+			    	value = value - 1;
+			    } else {
+			    	value = 0;
+			    }
+
+			    $input.val(value);
+			    $("#selectedQuantityValue").attr("value", value); //save to db doesn't work without this
+			});
+
+			$('.plus-btn').on('click', function(e) {
+			    e.preventDefault();
+			    var $this = $(this);
+			    var $input = $this.closest('div').find('input');
+			    var value = parseInt($input.val());
+			    if (value < 100) {
+					value = value + 1;
+			    } else {
+			    		value =100;
+			    }
+
+			    $input.val(value);
+			    $("#selectedQuantityValue").attr("value", value); //save to db doesn't work without this
+			});
+
+
+			// function add_click(){
+			// 	location.href = "3_servicesConfirmed.html"
+			// }
+    	</script>
 	</body>
 </html>
