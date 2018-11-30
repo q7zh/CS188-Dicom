@@ -11,29 +11,23 @@
 	<body>
 		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
     	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-		<script src="./javascript/placeOrder.js"></script>
-		<script src="./javascript/tipPage.js"></script>
 
-		<script>
-			$(document).ready(function(){
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+    	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script> 
 
-   				$(".userQuantitySelection").click(function() {
-   					$(".userQuantityOptions").css('display', 'none');
-   					$("#topListItemText").html($(this).html());  
-   				});
-
-   				$(".userQuantityOptions").mouseleave(function() {
-   					$(this).css('display', ''); //resets display value to "blank"
-   					//https://stackoverflow.com/questions/1053418/jquery-temporarily-change-a-style-then-reset-to-original-class
-   				});
-
-			});
-		</script>
+    	<script>
+    			const COLLECTIONNAME = "BCD"; //will be "items"
+				const ITEMNAME = "eggRoll";
+				const ITEMPRICE = 3;
+    	</script>
+		<script src="../../javascript/BCDitems.js"></script>
 
 
 		<div class="header">
-			<img src="../../images/profile.png">
-			Restaurant Menu	
+			<div class="backButton">
+				<a href="0_BCD_restaurantMenu.html"><i class="fas fa-chevron-left"></i></a>
+			</div>
+			Menu	
 		</div>
 
 		<div class="background">
@@ -50,41 +44,73 @@
 			</div> <!-- End menuHeader -->
 
 			<div class="quantityDiv">
-				<div class="menuCategory" style="height:60px;">
-					<div class="quantitySelectionText">Please select quantity:</div>
+				<div class="menuCategory" style="height:150px;">
+					<div class="quantitySelectionText">&nbsp;</div> <!-- For some reason, shit breaks if I remove this. So it's staying put. -->
 					<div class="quantitySelectionLine">
-					<!-- <div id="flex_max_container"> -->
-						<div class="quantityDropdown">
-							<nav id="quantity_dropdown_wrap">
-								<ul>
-								  <li><a id="topListItem" href="#"><span id="topListItemText">0</span>&nbsp&nbsp<i class="fas fa-caret-down"></i></a>
-								    <ul class="userQuantityOptions">
-								      <li><a class="userQuantitySelection" href="#">0</a></li>
-								      <li><a class="userQuantitySelection" href="#">1</a></li>
-								      <li><a class="userQuantitySelection" href="#">2</a></li>
-								      <li><a class="userQuantitySelection" href="#">3</a></li>
-								      <li><a class="userQuantitySelection" href="#">4</a></li>
-								      <li><a class="userQuantitySelection" href="#">5</a></li>
-									</ul>
-								  </li>
-								</ul>
-							</nav>
-						</div>	<!-- end quantityDropdown -->
+						<div class="quantityPlusMinus" style="width: 150px">
+							<button class="plus-btn" type="button" name="button">+</button>
+							<input type="text" name="name" id="selectedQuantityValue" value="">
+							<button class="minus-btn" type="button" name="button">-</button>
+						</div>
 
-						<div class="quantityAmount">4 Rolls</div>
-						<div class="quantityPrice">$3</div>
+						<div class="quantityAmount" style="width: 75px">4 Rolls</div>
+						<div class="quantityPrice" style="width: 75px">$3</div>
 						<!-- <div class="item-number">Item-Number</div>			 -->
 					<!-- </div>	end flex_max_container -->
-				</div>  <!-- end quantitySelection -->
+					</div>  <!-- end quantitySelectionLine -->
+
+				<div class="Notes">
+					<textarea rows="9" id="noteValue" placeholder="Please leave any additional notes here"></textarea>
+				</div>
 			</div>  <!-- end menuCategory -->
-			<div class="continue">
-				<a href="./0_BCD_restaurantMenu.html">
-				<button type="button">Add to Cart</button>
-				</a>
+
+			<div class="addToCartContainer">
+				<button type="button" id="addToCart">Add to Cart</button>
 			</div>
+
+			<div class="loader" style="display: none"></div>
+			<div class="miniLoader" style="display: inline"></div>
 
 
 		</div>	<!-- end background -->	
+
+		<script>
+    	//Copied and pasted from utensils.js, with a few changes...
+    		$('.minus-btn').on('click', function(e) {
+			    e.preventDefault();
+			    var $this = $(this);
+			    var $input = $this.closest('div').find('input');
+			    var value = parseInt($input.val());
+			    if (value > 1) {
+			    	value = value - 1;
+			    } else {
+			    	value = 0;
+			    }
+
+			    $input.val(value);
+			    $("#selectedQuantityValue").attr("value", value); //save to db doesn't work without this
+			});
+
+			$('.plus-btn').on('click', function(e) {
+			    e.preventDefault();
+			    var $this = $(this);
+			    var $input = $this.closest('div').find('input');
+			    var value = parseInt($input.val());
+			    if (value < 100) {
+					value = value + 1;
+			    } else {
+			    		value =100;
+			    }
+
+			    $input.val(value);
+			    $("#selectedQuantityValue").attr("value", value); //save to db doesn't work without this
+			});
+
+
+			// function add_click(){
+			// 	location.href = "3_servicesConfirmed.html"
+			// }
+    	</script>
 		
 	</body>
 </html>

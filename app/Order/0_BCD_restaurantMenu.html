@@ -18,28 +18,20 @@
 
 
 		<div class="header">
-			<img src="../../images/profile.png">
-			Restaurant Menu
+			<div class="backButton">
+				<a href="../Search/2_search_list.html"><i class="fas fa-chevron-left"></i></a>
+			</div>
+			Menu
 		</div>
 
 		<div class="background">
 			<div class="restaurantImage">
 				<div class="bottomLeft">BCD Tofu House</div>
-				<!--<button type="button"></button>-->
-				<!-- https://stackoverflow.com/questions/18032220/css-change-image-src-on-imghover -->
-				<div class="restaurantImageAutomatedServicesButton">
-					<a href="#"> <!-- still needs to be linked to something! -->
-					<img src="../../images/bellNormal.png" height="50" width="50"
-					onmouseover="this.src='../../images/bellHover.png'"
-					onmouseout="this.src='../../images/bellNormal.png'"
-					border="0" alt=""/></a>
-					<!--<img src="images/bellNormal.png" height="50" width="50">-->
-				</div>
 				<img src="../../images/placeOrder.jpg" height="164" width="376">
 			</div>
 
 			<div class="menuHeader">
-				<div class="menuFoodType">Korean</div>
+				<div class="menuFoodType"><b>Korean</b></div>
 				<div class='menuRatingStars'>
 					<div class="stars">
 						<span class="star on"></span>
@@ -51,7 +43,6 @@
 				<!--
 				</div>
 	    			<ul id='stars'>
-	    			<!--
 	      				<li class='star' title='Poor' data-value='1'>
 	        				<span class='starLeftHalf'><i class="fas fa-star-half" ></i><i class="fas fa-star-half" style="transform: scaleX(-1)"></i></span>
 	      				</li>
@@ -68,8 +59,7 @@
 	        				<i class='fa fa-star fa-fw'></i>
 	      				</li>
 	    			</ul>
-  				</div>
-  				-->
+  				</div>  -->
 					</div> <!-- End stars -->
 				</div> <!-- End menuRatingStars -->
 			</div> <!-- End menuHeader -->
@@ -77,33 +67,25 @@
 			<div class="menuList">
 				<div class="menuCategory" style="height:60px;">
 					<div class="menuCategoryTitle"><i>Popular Meals</i></div>
-					<div class="menuItem">
-						<a href="./1_BCD_tofu.html">
+					<a href="./1_BCD_tofu.html"> <div class="menuItem">
 						<div class="itemPrice">$6</div>
 						<div class="item-extra"></div>
 						<div class="itemName">Tofu with Kalbi<br>Combo</div>
-						<div class="item-number"></div>
-						</a>
-					</div>
+					</div></a>
 				</div>
 				<div class="menuCategory" style="height:120px;">
 					<div class="menuCategoryTitle"><i>Small Plates</i></div>
-					<div class="menuItem">
-						<a href="./1_BCD_friedMandu.html">
+
+					<a href="./1_BCD_friedMandu.html"> <div class="menuItem">
 						<div class="itemPrice">$3+</div>
 						<div class="item-extra"></div>
 						<div class="itemName" style="margin-top: 20px;">Fried Mandu</div>
-						<!--<div class="item-note">Spicy Sauce</div>-->
-						</a>
-					</div>
-					<div class="menuItem" style="margin-top:100px;">
-						<a href="./1_BCD_eggRoll.html">
+					</div></a>
+					<a href="./1_BCD_eggRoll.html"> <div class="menuItem" style="margin-top:100px;">
 						<div class="itemPrice">$3</div>
 						<div class="item-extra"></div>
 						<div class="itemName" style="margin-top: 20px;">Egg Roll</div>
-						<!--<div class="item-note">Spicy Sauce</div>-->
-						</a>
-					</div>
+					</div></a>
 				</div>
 			</div>
 			<div class="continue">
