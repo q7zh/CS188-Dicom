@@ -6,7 +6,7 @@
     	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    	<link href="../../css/confirmationPage.css" rel="stylesheet" />
+    	<link href="../../css/reviewOrder.css" rel="stylesheet" />
 			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
@@ -25,27 +25,27 @@
 		</div>
 
 		<div class="background">
+
 			<div class="container">
-				<div class="bottom-left">BCD Tofu House</div>
-				<img src="../../images/placeOrder.jpg" height="164" width="376">
+			<div class="title">BCD Tofu House</div>
+			<button class="shared_button_default">Shared</input>
 			</div>
 
-      <div class="Food">Food</div>
-			<p class="info">1 Fried Mandu<button type="button" class="edit_button">Edit</button> </p>
+			<div id="time" class="time">
+			</div>
 
+			<div class="topic">Food</div>
+      		<div id="orderList" class="orderList">
+			</div>
+
+<!-- 			<p class="info">Visa 1234<button type="button" class="edit_button">Edit</button> </p> -->
 			<div class="topic">Payment</div>
-			<p class="info">Visa 1234<button type="button" class="edit_button">Edit</button> </p>
+			<div id="checkout" class="checkout">
+			</div>
+			<div id="total" class="total">
+			</div>
 
-			<div class= "topic">Total</div>
-			<p class="info">$3.27<button type="button" class="edit_button">?</button> </p>
-
-
-
-
-
-
-
-			<div class="continue">
+			<div class="submit">
 				<button type="button" onclick="window.location.href='4_orderPlaced.html';">Submit Order</button>
 			</div>
 

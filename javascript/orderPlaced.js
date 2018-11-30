@@ -23,43 +23,46 @@ $( document ).ready(function() {
 
   readData();
 
+	// // write data to database
+	// function writeData(cur_title, cur_price, cur_quantity, cur_notes) {
+	// 	db.collection("Items").add({
+	//     	title: cur_title,
+	//     	price: cur_price,
+	//     	quantity: cur_quantity,
+	//     	notes: cur_notes,
+	// 	})
+	// 	.catch(function(error) {
+  //   		console.error("Error adding document: ", error);
+	// 	});
+	// }
+
   var subTotal = 0;
   var tax = 0;
   var bookingFee = 0;
   var total = 0;
 
-	 // read data from database
-  function readData() {
-    db.collection("Items").orderBy("time").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+	// read data from database
+	function readData() {
+		db.collection("orderTotal").get().then((querySnapshot) => {
+    		querySnapshot.forEach((doc) => {
 
         // read item data
-        var data = doc.data();
-        var cur_title = data.title;
-        var cur_price = data.price;
-        var cur_quantity = data.quantity;
-        var cur_notes = data.notes;
-
-        subTotal += Math.round(data.price * 100) / 100;
-
-        var serving = "";
-
-        if (cur_quantity == 1) {
-          serving = " Serving";
-        } else {
-          serving = " Servings";
-        }
+				var data = doc.data();
+				var cur_subtotal = data.subtotal;
+				var cur_tax = data.tax;
+				var cur_bookingFee = data.bookingFee;
+				var cur_total = data.total;
 
         $('#orderList').append('<div class="item">' +
-          '<div class="item-title">' +
+					'<div class="item-title">' +
           cur_title + '</div>' +
-          '<div class="item-price">$' + cur_price + '</div>' +
-          '<div class="item-extra">' +
-          '<div class="item-note">' + cur_notes + '</div>' +
-          '<div class="item-number">' + cur_quantity + serving + '</div>' +
-          '</div>' +
-          '</div>');
-        });
+					'<div class="item-price">$' + cur_price + '</div>' +
+					'<div class="item-extra">' +
+					'<div class="item-note">' + cur_notes + '</div>' +
+					'<div class="item-number">' + cur_quantity + serving + '</div>' +
+					'</div>' +
+				  '</div>');
+    		});
 
         tax = Math.round( 0.095 * subTotal * 100) / 100;
         bookingFee = Math.round( 4.99 * 100) / 100;
@@ -124,7 +127,15 @@ $( document ).ready(function() {
           '<div class="total-price">$' + total + '</div>'
         )
 
-    });
-  }
+		});
+
+	}
+
+  function deleteData() {
+  db.collection("Items").delete()
+  .catch(function(error) {
+      console.error("Error removing document: ", error);
+  });
+}
 
 });

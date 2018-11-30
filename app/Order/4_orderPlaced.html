@@ -7,11 +7,16 @@
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     	<link href="../../css/orderPlaced.css" rel="stylesheet" />
+			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+
 	</head>
 	<body>
-		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
-    	<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
+    	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 		<script src="../../javascript/placeOrder.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
 		<div class="header">
@@ -21,23 +26,26 @@
 		<div class="background">
 			<div class="container">
 				<div class="bottom-left">BCD Tofu House</div>
-				<button type="button">Cancel Order</button>
+
+				<button id="Items" type="button" onclick="window.location.href='../../app/Search/2_search_list.html';" >Cancel Order</button>
+
 				<img src="../../images/placeOrder.jpg" height="164" width="376">
 			</div>
 
-			<div class="time">
-				<div class="time-text"><i class="far fa-clock"></i>Expected Arrival</div>
-				<div class="time-time">11:30 AM</div>
+			<div id='time' class="time">
+				<!-- <div class="time-text"><i class="far fa-clock"></i>Expected Arrival</div>
+				<div class="time-time">'time'</time> </div> -->
 			</div>
+
 			<p>
 				<div class="table">Table 5</div><div class="partner">with Pete Barlow </div>
-		  <p>
-			<div class="big_black">Thank you! </div>
-			<div class="small_black">Your order was placed successfully!</div>
+		  	</p>
 
-			<div class="check_in">Please check in once you've arrived.</div>
-
-
+		  	<div class="info">
+				<div class="big_black">Thank you! </div>
+				<div class="small_black">Your order was placed successfully!</div>
+				<div class="check_in">Please check in once you've arrived.</div>
+			</div>
 
 			<div class="continue">
 				<button type="button" onclick="window.location.href='5_checkIn.html';">Check In</button>
