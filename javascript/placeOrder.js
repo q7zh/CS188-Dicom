@@ -35,7 +35,10 @@ $( document ).ready(function() {
   var total = 0;
 
   function writeOrderTotal(cur_subtotal, cur_tax, cur_bookingFee, cur_total) {
-    db.collection("orderTotal").add({
+    // https://firebase.google.com/docs/firestore/manage-data/add-data
+    // Let's just hardcode a doc to always check for now...
+    //db.collection("orderTotal").add({ //Don't keep making new documents each time!!
+    db.collection("orderTotal").doc("kevin's_badass_orderTotal").set({
         subtotal: cur_subtotal,
         tax: cur_tax,
         bookingFee: cur_bookingFee,
@@ -48,7 +51,8 @@ $( document ).ready(function() {
   }
 
   function writeExtraInfo(cur_restaurant, cur_orderTime, cur_expectedTime, cur_shared, cur_notes) {
-    db.collection("extraInfo").add({
+    //db.collection("extraInfo").add({
+    db.collection("extraInfo").doc("kevin's_sickass_extraInfo").set({
         restaurant: cur_restaurant,
         orderTime: cur_orderTime,
         expectedTime: cur_expectedTime,
@@ -62,37 +66,55 @@ $( document ).ready(function() {
 
 	// read data from database
 	function readData() {
-		db.collection("items").orderBy("time").get().then((querySnapshot) => {
-    		querySnapshot.forEach((doc) => {
+    
+    //For testing--eg put "document_dictionary" here
+    //db.collection("orderTotal").doc("JxaYzTqFxNbVjZwOLGNy").get().then(function(doc) {
+    //  console.log(doc.data());
+    //})
 
-        // read item data
-				var data = doc.data();
-				var cur_title = data.title;
-				var cur_price = data.price;
-				var cur_quantity = data.quantity;
-				var cur_notes = data.notes;
+    //For manipulation purposes:
+    //db.collection("items").doc("document_dictionary").delete();
+    //db.collection("items").doc("document_dictionary").set( {testValue: "KevinPutThisHere!"});
 
-        subTotal += Math.round(data.price * 100) / 100;
+    //Should do this in b/w .collection and .get() --> orderBy("time")
+		db.collection("items").get().then((querySnapshot) => {
+    		console.log(querySnapshot.size);
+        querySnapshot.forEach((doc) => {
 
-        var serving = "";
+          // read item data
+  				var data = doc.data();
+  				var cur_title = data.title;
+  				var cur_price = data.price;
+  				var cur_quantity = data.quantity;
+  				var cur_notes = data.notes;
 
-        if (cur_quantity == 1) {
-          serving = " Serving";
-        } else {
-          serving = " Servings";
-        }
+          //Makes sure document_dictionary doesn't screw things up, since it's also in this collection
+          if (cur_title != undefined && cur_quantity != 0 && cur_title != "Tofu Stew") 
+          {
+            console.log(cur_quantity);
+            subTotal += Math.round(data.price * 100) / 100;
 
-        $('#orderList').append( '<a href="../Order/6_editItem.html">' +
-          '<div class="item">' +
-					'<div class="item-title">' +
-          cur_title + '</div>' +
-					'<div class="item-price">$' + cur_price + '</div>' +
-					'<div class="item-extra">' +
-					'<div class="item-note">' + cur_notes + '</div>' +
-					'<div class="item-number">' + cur_quantity + serving + '</div>' +
-					'</div>' +
-				  '</div>' + '</a>');
-    		});
+            var serving = "";
+
+            if (cur_quantity == 1) {
+              serving = " Serving";
+            } else {
+              serving = " Servings";
+            }
+
+            $('#orderList').append( '<a href="../Order/6_editItem.html">' +
+              '<div class="item">' +
+              '<div class="item-title">' +
+              cur_title + '</div>' +
+              '<div class="item-price">$' + cur_price + '</div>' +
+              '<div class="item-extra">' +
+              '<div class="item-note">' + cur_notes + '</div>' +
+              '<div class="item-number">' + cur_quantity + serving + '</div>' +
+              '</div>' +
+              '</div>' + '</a>');
+
+          }
+        });
 
         tax = Math.round( 0.095 * subTotal * 100) / 100;
         bookingFee = Math.round( 4.99 * 100) / 100;
@@ -118,12 +140,15 @@ $( document ).ready(function() {
           '<div class="total-price">$' + total + '</div>'
         )
 
+         console.log("About to write total");
+         console.log(total);
         writeOrderTotal(subTotal, tax, bookingFee, total);
 
 		});
 
-    db.collection("extraInfo").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+    //db.collection("extraInfo").get().then((querySnapshot) => {
+    db.collection("extraInfo").doc("kevin's_sickass_extraInfo").get().then(doc => {
+        //querySnapshot.forEach((doc) => {
 
           // read item data
           var data = doc.data();
@@ -141,7 +166,7 @@ $( document ).ready(function() {
           elem.value = cur_shared;
           document.getElementById("notes").value = data.notes;
         });
-    });
+    //});
 	}
 
   // expected time

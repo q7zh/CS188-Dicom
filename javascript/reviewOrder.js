@@ -36,7 +36,8 @@ $( document ).ready(function() {
 
 	 // read data from database
   function readData() {
-    db.collection("items").orderBy("time").get().then((querySnapshot) => {
+    //.orderBy("time")
+    db.collection("items").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
 
         // read item data
@@ -46,32 +47,40 @@ $( document ).ready(function() {
         var cur_quantity = data.quantity;
         var cur_notes = data.notes;
 
-        subTotal += Math.round(data.price * 100) / 100;
+        //Makes sure document_dictionary doesn't screw things up, since it's also in this collection
+        if (cur_title != undefined && cur_quantity != 0 && cur_title != "Tofu Stew")
+        {
 
-        var serving = "";
+          subTotal += Math.round(data.price * 100) / 100;
 
-        if (cur_quantity == 1) {
-          serving = " Serving";
-        } else {
-          serving = " Servings";
+          var serving = "";
+
+          if (cur_quantity == 1) {
+            serving = " Serving";
+          } else {
+            serving = " Servings";
+          }
+
+          $('#orderList').append('<div class="item">' +
+            '<div class="item-title">' +
+            cur_title + '</div>' +
+            '<div class="item-price">$' + cur_price + '</div>' +
+            '<div class="item-extra">' +
+            '<div class="item-note">' + cur_notes + '</div>' +
+            '<div class="item-number">' + cur_quantity + serving + '</div>' +
+            '</div>' +
+            '</div>');
         }
-
-        $('#orderList').append('<div class="item">' +
-          '<div class="item-title">' +
-          cur_title + '</div>' +
-          '<div class="item-price">$' + cur_price + '</div>' +
-          '<div class="item-extra">' +
-          '<div class="item-note">' + cur_notes + '</div>' +
-          '<div class="item-number">' + cur_quantity + serving + '</div>' +
-          '</div>' +
-          '</div>');
     });
   });
 
-    db.collection("orderTotal").get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
+    //db.collection("orderTotal").get().then((querySnapshot) => {
+    //  querySnapshot.forEach((doc) => {
+    db.collection("orderTotal").doc("kevin's_badass_orderTotal").get().then(function(doc) {
+      if (doc && doc.exists) {
+        const myData = doc.data();
 
-        // read item data
+         // read item data
         var data = doc.data();
         var cur_subtotal = data.subtotal;
         var cur_tax = data.tax;
@@ -99,7 +108,13 @@ $( document ).ready(function() {
           '<div class="total-title">Total</div>' +
           '<div class="total-price">$' + cur_total + '</div>'
         )
-      });
+      }
+      else
+        {
+          console.log("kevin's_badass_orderTotal", "document in Firestore not found!");
+        }
+    }).catch(function (error) {
+        console.log("Error loading item document from Firestore: ", error);
     });
 
     db.collection("extraInfo").get().then((querySnapshot) => {
