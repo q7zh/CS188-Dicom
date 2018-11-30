@@ -13,7 +13,7 @@ $(document).ready(function(){
 			title: ITEMNAME,
 			price: ITEMPRICE,
 			quantity: $("#selectedQuantityValue").attr("value"),
-			note: $("#noteValue").val() //NOT .html(), see http://api.jquery.com/val/
+			notes: $("#noteValue").val() //NOT .html(), see http://api.jquery.com/val/
 		}).then(function() {
 			console.log("Status saved!");
 		}).catch(function(error) {
@@ -78,9 +78,16 @@ $(document).ready(function(){
 	///////////////////////////////////////////////////////////////////
 	//Initialize DB and do a read
 	firebase.initializeApp({
-	apiKey: "AIzaSyDmtlSHDnZwX2AF6jl2jx-SJCjyQnUTuts",
-	authDomain: "web-quickstart-f6007.firebaseapp.com",
-	projectId: "web-quickstart-f6007"
+		apiKey: "AIzaSyALZcFp77OEXeQVVxOXjsdAX0T9FDLpZo8",
+	    authDomain: "cs188-project-6b18d.firebaseapp.com",
+	    databaseURL: "https://cs188-project-6b18d.firebaseio.com",
+	    projectId: "cs188-project-6b18d",
+	    storageBucket: "cs188-project-6b18d.appspot.com",
+	    messagingSenderId: "449496502426"
+		//My values, above are Qiliang's
+		//apiKey: "AIzaSyDmtlSHDnZwX2AF6jl2jx-SJCjyQnUTuts",
+		//authDomain: "web-quickstart-f6007.firebaseapp.com",
+		//projectId: "web-quickstart-f6007"
 	});
 
     // Initialize Cloud Firestore through Firebase
@@ -108,8 +115,8 @@ $(document).ready(function(){
        			$("#selectedQuantityValue").attr("value", myData.quantity);
        		$(".miniLoader").css('display', 'none');
 
-       		if (myData.note != undefined)
-       			$("#noteValue").val(myData.note)
+       		if (myData.notes != undefined)
+       			$("#noteValue").val(myData.notes)
        	}
        	else
        	{
