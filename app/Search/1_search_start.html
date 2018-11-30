@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<title>Dicom</title>
+    	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+    	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    	<link href="../../jquery/css/jquery.timepicker.min.css" rel="stylesheet" />
+    	<link href="../../css/search_start.css" rel="stylesheet" />
+	</head>
+	<body>
+		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
+    	<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="../../jquery/js/jquery.timepicker.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				$("#search_restaurant_input").autocomplete({
+    				source: /* function(request, response) {
+		    			var input = $.ui.autocomplete.escapeRegex(request.term);
+			        	var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+
+	        			response($.grep(capitals, function(value) {
+	        				return matcher.test(value) || matcher.test(normalize(value));
+	        			})); */
+	        			["American", "Asian", "Ethiopian", "Indian", "Italian", "Japanese", "Korean", "Korean BBQ", "Mexican", "Fast Food",
+	        			 "Sit Down", "Buffet", "Breakfast", "Lunch", "Dinner", "Dessert", "Happy Hour", "Sandwiches", 
+	        			 "Ice Cream"],
+    				minLength: 2
+					// select: function(event, ui) {
+					// 	$("#search_restaurant_input").val(ui.item.value);
+					// 	submit();
+					// 	return false;
+					//}
+    			});
+
+    			$("#tableShareButton").click(function() {
+    				var clicks = $(this).data('clicks');
+    				if(clicks) {
+    					$(this).css('border-style', ''); //Even number of clicks?
+    				}
+    				else {
+    					$(this).css('border-style', 'inset'); //Odd number of clicks?
+    				}
+    				$(this).data("clicks", !clicks);
+    			});
+    			//https://stackoverflow.com/questions/2459153/alternative-to-jquerys-toggle-method-that-supports-eventdata
+
+    			$('input.timepicker').timepicker({
+    				    timeFormat: 'h:mm p',
+					    interval: 60,
+					    minTime: '12',
+					    maxTime: '8:00pm',
+					    defaultTime: '12',
+					    startTime: '12:00',
+					    dynamic: false,
+					    dropdown: true
+    			});
+
+			});
+	
+		</script>
+
+
+		<div class="header">
+			<div class="backButton">
+				<a href="../../index.html"><i class="fas fa-chevron-left"></i></a>
+			</div>
+			Search
+		</div>
+
+		<div class="background">
+			
+			<div class="searchHeader">
+				<form action="./2_search_list.html">
+				<div id="search_location_container" style="padding-top:5px">
+					<i class="fas fa-map-marker-alt"></i>
+			    	<input id="search_location_input" type="text" autocomplete="off" placeholder="Current Location" name="location" required />
+			    </div>
+
+			    <div id="search_restaurant_container">
+			    	<i class="fas fa-search"></i>
+			    	<input id="search_restaurant_input" type="text" autocomplete="off" placeholder="Search for something!" name="searchTerm" required />
+			    </div> 
+			    
+			    <input type="submit" style="display: none;"/> <!-- allows us to hit enter-key to submit -->
+			    <!-- https://stackoverflow.com/questions/4196681/form-not-submitting-when-pressing-enter -->
+			    </form>
+
+			 	<div id="searchButtonsContainer">
+				    <span>
+				    	<input type="button" id="tableShareButton" value="Table Share" style="padding: 0px;"/>
+				    </span>
+
+				    <span>
+    					<input type="button" id="timeButton" class="timepicker" name="time" style="padding: 0px; position: relative; left: 10px" />
+				    	<!-- <input type="button" id="timeButton" value="12:30pm" style="padding: 0px; position: relative; left: 10px"/> -->
+				    </span>
+
+				    <span>
+
+				    </span>
+
+				</div>
+			</div>
+
+
+<!-- 		<div class="menuHeader">
+				<div class="menuFoodType">Korean</div>
+			</div> -->
+
+
+<!-- 			<div class="menuList">
+				<div class="menuCategory" style="height:60px;">
+					<div class="menuCategoryTitle">Popular Meals</div>
+					<div class="menuItem">
+						<a href="./menuItem_tofu.html">
+						<div class="itemPrice">$6</div>
+						<div class="item-extra"></div>	
+						<div class="itemName">Tofu with Kalbi<br>Combo</div>
+						<div class="item-number"></div>	
+						</a>			
+					</div>				
+				</div>
+				<div class="menuCategory" style="height:120px;">
+					<div class="menuCategoryTitle">Small Plates</div>
+					<div class="menuItem">
+						<a href="./menuItem_friedMandu.html">				
+						<div class="itemPrice">$3+</div>
+						<div class="item-extra"></div>
+						<div class="itemName" style="margin-top: 20px;">Fried Mandu</div>
+						</a>			
+					</div>
+					<div class="menuItem" style="margin-top:100px;">
+						<a href="./menuItem_eggRoll.html">				
+						<div class="itemPrice">$3</div>
+						<div class="item-extra"></div>
+						<div class="itemName" style="margin-top: 20px;">Egg Roll</div>
+						</a>			
+					</div>
+				</div>
+			</div>
+			<div class="continue">
+
+				<button type="button"><a href="./placeOrder.html">Checkout</a></button>
+
+			</div>
+ -->
+		</div>	<!-- end background -->	
+		
+	</body>
+</html>

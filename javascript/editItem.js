@@ -1,5 +1,16 @@
 $( document ).ready(function() {
 
+  // quantity selection
+  $(".userQuantitySelection").click(function() {
+    $(".userQuantityOptions").css('display', 'none');
+    $("#topListItemText").html($(this).html());  
+  });
+
+  $(".userQuantityOptions").mouseleave(function() {
+    $(this).css('display', ''); //resets display value to "blank"
+    //https://stackoverflow.com/questions/1053418/jquery-temporarily-change-a-style-then-reset-to-original-class
+  });
+
 	// Initialize Firebase
 	var config = {
     apiKey: "AIzaSyD7wc7mQw4uB1Lg_lwftU_iDe2il2fsbKs",
@@ -23,22 +34,31 @@ $( document ).ready(function() {
 
   readData();
 
-  var subTotal = 0;
-  var tax = 0;
-  var bookingFee = 0;
-  var total = 0;
+  // write data to database
+  function writeData(cur_subtotal, cur_tax, cur_bookingFee, cur_total) {
+    db.collection("orderTotal").add({
+        subtotal: cur_subtotal,
+        tax: cur_tax,
+        bookingFee: cur_bookingFee,
+        total: cur_total
 
-	 // read data from database
-  function readData() {
-    db.collection("Items").orderBy("time").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+  }
+
+	// read data from database
+	function readData() {
+		db.collection("Items").orderBy("time").get().then((querySnapshot) => {
+    		querySnapshot.forEach((doc) => {
 
         // read item data
-        var data = doc.data();
-        var cur_title = data.title;
-        var cur_price = data.price;
-        var cur_quantity = data.quantity;
-        var cur_notes = data.notes;
+				var data = doc.data();
+				var cur_title = data.title;
+				var cur_price = data.price;
+				var cur_quantity = data.quantity;
+				var cur_notes = data.notes;
 
         subTotal += Math.round(data.price * 100) / 100;
 
@@ -50,16 +70,17 @@ $( document ).ready(function() {
           serving = " Servings";
         }
 
-        $('#orderList').append('<div class="item">' +
-          '<div class="item-title">' +
+        $('#orderList').append( '<a href="../Order/6_editItem.html">' +
+          '<div class="item">' +
+					'<div class="item-title">' +
           cur_title + '</div>' +
-          '<div class="item-price">$' + cur_price + '</div>' +
-          '<div class="item-extra">' +
-          '<div class="item-note">' + cur_notes + '</div>' +
-          '<div class="item-number">' + cur_quantity + serving + '</div>' +
-          '</div>' +
-          '</div>');
-        });
+					'<div class="item-price">$' + cur_price + '</div>' +
+					'<div class="item-extra">' +
+					'<div class="item-note">' + cur_notes + '</div>' +
+					'<div class="item-number">' + cur_quantity + serving + '</div>' +
+					'</div>' +
+				  '</div>' + '</a>');
+    		});
 
         tax = Math.round( 0.095 * subTotal * 100) / 100;
         bookingFee = Math.round( 4.99 * 100) / 100;
@@ -124,7 +145,9 @@ $( document ).ready(function() {
           '<div class="total-price">$' + total + '</div>'
         )
 
-    });
-  }
+        writeData(subTotal, tax, bookingFee, total);
+
+		});
+	}
 
 });

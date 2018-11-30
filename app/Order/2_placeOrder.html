@@ -6,11 +6,10 @@
     	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    	<link href="../../css/orderPlaced.css" rel="stylesheet" />
+    	<link href="../../css/placeOrder.css" rel="stylesheet" />
 			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
-
 	</head>
 	<body>
 		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
@@ -20,38 +19,53 @@
 
 
 		<div class="header">
-			Confirmation
+			<div class="backButton">
+				<a href="0_BCD_restaurantMenu.html"><i class="fas fa-times"></i></a>
+			</div>
+			Place Order
 		</div>
 
 		<div class="background">
 			<div class="container">
 				<div class="bottom-left">BCD Tofu House</div>
-
-				<button type="button" onclick="window.location.href='0_restaurantMenu.html';" >Cancel Order</button>
-
+				<input type="button" class="shared_button_default" id="shared_button" value="Shared" onclick="change()" ></input>
 				<img src="../../images/placeOrder.jpg" height="164" width="376">
 			</div>
 
-			<div id='time' class="time">
-				<!-- <div class="time-text"><i class="far fa-clock"></i>Expected Arrival</div>
-				<div class="time-time">'time'</time> </div> -->
+			<div id="time" class="time">
 			</div>
 
-			<p>
-				<div class="table">Table 5</div><div class="partner">with Pete Barlow </div>
-		  <p>
-			<div class="big_black">Thank you! </div>
-			<div class="small_black">Your order was placed successfully!</div>
+			<div id="orderList" class="orderList">
+			</div>
 
-			<div class="check_in">Please check in once you've arrived.</div>
+			<input type="text" placeholder='Add a Note (extra services…)'>
 
+			<div id="checkout" class="checkout">
+			</div>
 
+			<div id="total" class="total">
+			</div>
 
 			<div class="continue">
-				<button type="button" onclick="window.location.href='4_checkIn.html';">Check In</button>
+				<button type="button" id="continue" onclick="window.location.href='3_reviewOrder.html';">Continue</button>
 			</div>
 
 		</div>
+		<script type="text/javascript">
+			document.getElementById('shared_button').onclick=function(){
+				var elem = document.getElementById("shared_button");
+				if(elem.value == "Shared"){
+					elem.value = "Private";
+					elem.style.backgroundColor ='#0066ff';
+				}
+				else{
+					elem.value = "Shared";
+					elem.style.backgroundColor ='#F5A623';
+				}
+			}
+		</script>
+
+
 
 	</body>
 </html>

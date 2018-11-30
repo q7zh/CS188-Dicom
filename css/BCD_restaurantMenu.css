@@ -157,6 +157,7 @@ body {
 	margin-right: 20px;
 }
 
+
 .menuCategory {
 	margin-top: 15px;
 	padding-bottom: 50px;
@@ -194,6 +195,18 @@ body {
 	color: white;
 	/*background: url('images/bellNormal.png') no-repeat;*/
 }
+
+.menuItem a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.menuItem:hover {
+    /*color:red;*/
+    background-color: #fcd800;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
 
 .menuCategory .itemPrice {
 	float: right;
@@ -297,4 +310,9 @@ input[type=text] {
 
 .continue button:hover {
 	background-color: #fcd800;
+}
+
+.continue a {
+	color: black;
+	text-decoration: none;
 }
