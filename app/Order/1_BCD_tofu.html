@@ -14,9 +14,74 @@
 		<script src="./javascript/placeOrder.js"></script>
 		<script src="./javascript/tipPage.js"></script>
 
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+    	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script> 
+
 		<script>
+
 			$(document).ready(function(){
 
+				///////////////////////////////////////////////////////////////////
+				//Constants and functions to set up
+				const DOCUMENTNAME = "BCD";
+
+				async function saveToDB(myDocRef) {
+					console.log("Initiating save to Firestore...");
+
+					await myDocRef.set({
+						tofu: $("#topListItemText").html()
+						//To do: Also do this for "tofu_note"
+					}).then(function() {
+						console.log("Status saved!");
+					}).catch(function(error) {
+						console.log("Got an error saving to Firestore: ", error);
+					});
+				}
+
+
+				///////////////////////////////////////////////////////////////////
+				//Initialize DB and do a read
+				firebase.initializeApp({
+            	apiKey: "AIzaSyDmtlSHDnZwX2AF6jl2jx-SJCjyQnUTuts",
+            	authDomain: "web-quickstart-f6007.firebaseapp.com",
+            	projectId: "web-quickstart-f6007"
+        		});
+
+		        // Initialize Cloud Firestore through Firebase
+		        var db = firebase.firestore();
+		       	// Disable deprecated features
+		        db.settings({
+		            timestampsInSnapshots: true
+		        });
+		        const DOCSTRING = "test1/" + DOCUMENTNAME;
+		        const docRef = db.doc(DOCSTRING);
+		        //const docRef = db.doc("/test1/lod1CsUXdtSWoHFU0flD")
+
+
+
+		       // Load from database
+		       docRef.get().then(function(doc) {
+		       	if (doc && doc.exists) {
+		       		const myData = doc.data();
+		       		if (myData.tofu == undefined)
+		       			$("#topListItemText").html("0");
+		       		else 
+		       			$("#topListItemText").html(myData.tofu);
+		       		//Also set the tofu_note  
+		       	}
+		       	else
+		       	{
+		       		console.log("Document in Firestore not found!");
+		       		$("#topListItemText").html("0");
+		       	}
+		       }).catch(function (error) {
+		       	console.log("Got an error loading from Firestore: ", error)
+		       });
+
+
+
+		        ///////////////////////////////////////////////////////////////////
+		        //Watch for Events
    				$(".userQuantitySelection").click(function() {
    					$(".userQuantityOptions").css('display', 'none');
    					$("#topListItemText").html($(this).html());  
@@ -26,6 +91,45 @@
    					$(this).css('display', ''); //resets display value to "blank"
    					//https://stackoverflow.com/questions/1053418/jquery-temporarily-change-a-style-then-reset-to-original-class
    				});
+
+   				$("#addToCart").click(async function () {
+   					$(".loader").css('display', '');
+   					console.log("Before saveToDB() call");
+   					await saveToDB(docRef);
+   					console.log("After saveToDB() call");
+
+   					//Load next page
+   					var form = $('<form></form>');
+
+				    form.attr("method", "post");
+				    form.attr("action", "./1_BCD_restaurantMenu.html");
+
+				    //var parameters = {
+				    //	"key1": "value1",
+				    //	"key2": "value2"
+				    //};
+
+				    //$.each(parameters, function(key, value) {
+				    //    var field = $('<input></input>');
+
+				    //    field.attr("type", "hidden");
+				    //    field.attr("name", key);
+				    //    field.attr("value", value);
+
+				    //    form.append(field);
+				    //	});
+
+				    // The form needs to be a part of the document in
+				    // order for us to be able to submit it.
+				    $(document.body).append(form);
+				    form.submit();
+				})
+
+   				//Perform on document unload
+   				//$(window).unload(function() {
+   				//	console.log("Page being unloaded!")
+   				//	saveToDB(docRef);
+   				//})
 
 			});
 		</script>
@@ -57,7 +161,7 @@
 						<div class="quantityDropdown">
 							<nav id="quantity_dropdown_wrap">
 								<ul>
-								  <li><a id="topListItem" href="#"><span id="topListItemText">0</span>&nbsp&nbsp<i class="fas fa-caret-down"></i></a>
+								  <li><a id="topListItem" href="#"><span id="topListItemText"></span>&nbsp&nbsp<i class="fas fa-caret-down"></i></a>
 								    <ul class="userQuantityOptions">
 								      <li><a class="userQuantitySelection" href="#">0</a></li>
 								      <li><a class="userQuantitySelection" href="#">1</a></li>
@@ -83,11 +187,13 @@
 					<!-- </div>	end flex_max_container -->
 				</div>  <!-- end quantitySelection -->
 			</div>  <!-- end menuCategory -->
-			<div class="continue">
-				<a href="./1_BCD_restaurantMenu.html">
-				<button type="button">Add to Cart</button>
-				</a>
+			<div class="addToCartContainer">
+				<!-- <a href="./1_BCD_restaurantMenu.html"> -->
+				<button type="button" id="addToCart">Add to Cart</button>
+				<!-- </a> -->
 			</div>
+
+			<div class="loader" style="display: none"></div>
 			<!--<input type="text" placeholder='Add a Note (extra services…)'>-->
 <!-- 
 			<div id="flex_max_container">
