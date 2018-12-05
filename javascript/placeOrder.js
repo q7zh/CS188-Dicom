@@ -101,7 +101,7 @@ $( document ).ready(function() {
           if (cur_title != undefined && cur_quantity != 0 && cur_title != "Tofu Stew") 
           {
             console.log(cur_quantity);
-            subTotal += Math.round(data.price * 100) / 100;
+            subTotal += (Math.round(data.price * 100) / 100) * cur_quantity;
 
             var serving = "";
 
@@ -118,7 +118,7 @@ $( document ).ready(function() {
               '<div class="item">' +
               '<div class="item-title">' +
               cur_title + '</div>' +
-              '<div class="item-price">$' + cur_price + '</div>' +
+              '<div class="item-price">$' + cur_price + ' each</div>' +
               '<div class="item-extra">' +
               '<div class="item-note">' + cur_notes + '</div>' +
               '<div class="item-number">' + cur_quantity + serving + '</div>' +
@@ -139,7 +139,7 @@ $( document ).ready(function() {
         $('#checkout').html(
           '<div class="checkout-item">' +
           '<div class="checkout-title">Subtotal</div>' +
-          '<div class="checkout-price">$' + subTotal + '</div>' +
+          '<div class="checkout-price">$' + subTotal.toFixed(2) + '</div>' +
           '</div>'+
           '<div class="checkout-item">' +
           '<div class="checkout-title">Tax</div>' +
