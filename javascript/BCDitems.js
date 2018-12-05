@@ -91,7 +91,7 @@ $(document).ready(function(){
 		console.log(isEditPage);
 		isEditPage = true;
 		$(".headerText").html("Edit Item");
-		$("#addToCart").html("Update");
+		//$("#addToCart").html("Update");
 		$(".backButton").children("a").attr("href", "2_placeOrder.html");
 
 	}
