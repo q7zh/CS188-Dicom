@@ -1,0 +1,423 @@
+body {
+	background-color: #555;
+}
+
+.background {
+	/*height: 603px;*/
+	height: 620px;
+	width: 375px;
+	padding-bottom: 15px;
+	background-color: white;
+}
+
+.header {
+	height: 64px;
+	width: 375px;
+	background-color:#FFE651;
+	font-size: 17px;
+	font-weight: bold;
+	font-family: 'Helvetica';
+	text-align: center;
+	line-height: 60px;
+}
+
+.header .backButton{
+	position: absolute;
+	margin-top: 5px;
+	width: 15.6px;
+	left: 25px;
+}
+
+.header .backButton a {
+	color: inherit;
+}
+
+.restaurantImage img {
+	object-fit: cover;
+	opacity: 0.9;
+	z-index: -1;
+}
+
+.restaurantImage {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+
+.menuItemHeader {
+	margin-top: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-bottom: 15px;
+	font-size: 15px;
+	font-family: 'Helvetica';
+	display: block;
+	clear: both;
+	border-bottom: 1px solid lightgrey;
+}
+
+
+.menuItemName {
+	text-align: left;
+	font-weight: bold;
+	font-size: 25px;
+	font-family: 'Helvetica';
+	z-index: 1;
+}
+
+.menuItemDescription {
+	padding: 5px;
+}
+
+
+.quantityDiv {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+
+.menuCategory {
+	margin-top: 15px;
+	padding-bottom: 40px;
+	font-size: 15px;
+	font-family: 'Helvetica';
+	display: block;
+	clear: both;
+	border-bottom: 1px solid lightgrey;
+}
+
+/*.menuCategory .quantitySelectionText {
+	float: left;
+}*/
+
+.menuCategory .quantitySelectionLine {
+	float: left;
+}
+
+.quantitySelectionLine {
+	/*position: absolute;*/
+	/*margin-left: 290px;*/
+	/*margin-top: 122px;*/
+	/*margin-left: 40px;*/
+	/*ONE I PROBABLY WANT!!!!     margin-top: 30px;*/
+	position: relative;
+	bottom: 30px;
+	z-index: 1;
+	/*height: 60px;*/
+	/*width: 250px;*/
+	/*background-color: #dbdcdd;*/
+	text-align: center;
+	border-radius: 6px;
+	border: none;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 13px;
+	/*background: url('images/bellNormal.png') no-repeat;*/
+
+	display: flex;                  /* establish flex container */
+  	flex-direction: row;            /* default value; can be omitted */
+  	flex-wrap: nowrap;              /* default value; can be omitted */
+  	justify-content: space-between; /* switched from default (flex-start, see below) */
+  	/*align-items: center;*/
+  	/* https://stackoverflow.com/questions/2603700/how-to-align-3-divs-left-center-right-inside-another-div */
+}
+
+.quantitySelectionLine > div {
+  /*width: 100px;*/
+  height: 50px;
+  /*border: 2px dashed red;*/
+}
+
+
+.menuCategory .quantityPrice {
+	float: right;
+	vertical-align: middle;
+	margin-top: 18px; /* this is cheating */
+	margin-left: 30px;
+	font-size: 18px;
+}
+
+.menuCategory .quantityAmount {
+	/*position: absolute;*/
+	/*margin-top: 10px;*/
+	/*width: 335px;*/
+	float: left;
+	font-size: 16px;
+	margin-top: 20px; /* this is cheating */
+}
+
+.menuCategory .quantityDropdown {
+	/*border: 2px dashed red;*/
+}
+/*.quantityDropdown .item-note {
+	color: #8E8E93;
+	float: left;
+}
+
+.quantityDropdown .item-number {
+	color: #F5A623;
+	float: right;
+}*/
+
+
+
+input[type=text] {
+	width: 333px;
+    height: 26px;
+    margin-top: 15px;
+    /*margin-left: 20px;*/
+    padding-bottom: 10px;
+    border: 1px;
+    display: block;
+    font-size: 13px;
+    font-family: 'Helvetica';
+    border-bottom: 1px solid lightgrey;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+/*                          */
+/*   DROPDOWN Related CSS   */
+/*                          */
+
+/*#quantity_dropdown_wrap
+{
+	margin-top:15px
+}
+
+#quantity_dropdown_wrap #topListItem
+{
+	color:violet
+	background:#ddd;
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 1px;
+}
+
+#quantity_dropdown_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#quantity_dropdown_wrap ul a
+{
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+#quantity_dropdown_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+#quantity_dropdown_wrap ul li.current-menu-item
+{
+	background:#ddd
+}
+
+#quantity_dropdown_wrap ul li:hover
+{
+	background:#f2f5f9;
+}
+
+#quantity_dropdown_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fcfdff;
+	padding:0;
+	border: 1px solid black;
+}
+
+#quantity_dropdown_wrap ul ul li
+{
+	float:none;
+	width:75px
+}
+
+#quantity_dropdown_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px
+}
+
+   When the top list item, ie "Quantity" is being hovered over,
+   display the ul below it                                  
+#quantity_dropdown_wrap ul li:hover > ul
+{
+	display:block
+}*/
+
+/*                          */
+/* END DROPDOWN Related CSS */
+/*                          */
+
+
+
+/*                         */
+/* Quantity Plus/Minus CSS */
+/*                         */
+
+.quantityPlusMinus {
+	position: relative;
+	left: 20px;
+	/*padding-top: 20px;
+	margin-left: 200px;
+	position:absolute;*/ 
+}
+.quantityPlusMinus input {
+	-webkit-appearance: none;
+	border: none;
+	text-align: center;
+	width: 32px;
+	font-size: 16px;
+	color: #43484D;
+	font-weight: 300;
+	display: inline;
+}
+
+button[class*=btn] {
+	width: 30px;
+	height: 30px;
+	background-color: #E1E8EE;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+.minus-btn img {
+	margin-bottom: 3px;
+}
+.plus-btn img {
+	margin-top: 2px;
+}
+
+/*                             */
+/* END Quantity Plus/Minus CSS */
+/*                             */
+
+
+
+#flex_max_container {
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  /*justify-content: space-between;  switched from default (flex-start, see below) */
+  background-color: lightyellow;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#flex_max_container > div {
+  width: 100px;
+  /*height: 100px;*/
+  border: 2px dashed red;
+  
+  /*position: absolute;*/
+  /*top: 50%;*/
+  /*margin-top: -50px;*/
+ 
+  /*line-height:6em;*/
+
+  text-align: center;
+}
+
+
+.Notes{
+	position: relative;
+	bottom: 35px;
+	padding-bottom: 18px;
+	margin-top:65px;
+	text-align:left;
+	font-family:'Helvetica';
+	font-weight:bold;
+
+}
+textarea {
+	margin-top: 10px;
+	width:305px;
+	height:80px;
+	resize: none;
+	font-family:'Helvetica';
+	padding:10px;
+	font-size:15px;
+}
+
+
+
+
+.addToCartContainer {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.addToCartContainer button {
+	background-color: #FFE651;
+	text-align: center;
+	border-radius: 25px;
+	border: none;
+	font-size: 17px;
+	font-weight: bold;
+	width: 182px;
+	height: 42px;
+}
+
+.addToCartContainer button:hover {
+	background-color: #fcd800;
+	cursor: pointer;
+}
+
+/* https://www.w3schools.com/howto/howto_css_loader.asp */
+.loader {
+	position: absolute;
+  	left: 110px;
+  	top: 300px;
+  	z-index: 1;
+
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.miniLoader {
+	position: absolute;
+  	left: 290px;
+  	top: 366px;
+  	z-index: 1;
+
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

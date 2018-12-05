@@ -106,9 +106,9 @@ $( document ).ready(function() {
             var serving = "";
 
             if (cur_quantity == 1) {
-              serving = " Serving";
+              serving = " Order";
             } else {
-              serving = " Servings";
+              serving = " Orders";
             }
 
             let pageLink = '<form class="editItemForm" style="cursor:pointer;" action="./' 

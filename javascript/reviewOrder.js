@@ -56,9 +56,9 @@ $( document ).ready(function() {
           var serving = "";
 
           if (cur_quantity == 1) {
-            serving = " Serving";
+            serving = " Order";
           } else {
-            serving = " Servings";
+            serving = " Orders";
           }
 
           $('#orderList').append('<div class="item">' +
