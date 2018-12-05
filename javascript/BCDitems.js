@@ -76,6 +76,33 @@ $(document).ready(function(){
 
 
 	///////////////////////////////////////////////////////////////////
+	//Check to see if this is the "edit" version of the page--if so,
+	//go and change a few things
+	//https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+	const urlParams = new URLSearchParams(window.location.search);
+	let isEditPage = urlParams.get('isEditPage');
+	if (isEditPage == null)
+	{
+		console.log("No value set for 'isEditPage' parameter!"); //Let's leave everything alone
+		isEditPage = false;
+	}
+	else if (isEditPage == "yes")
+	{
+		console.log(isEditPage);
+		isEditPage = true;
+		$(".headerText").html("Edit Item");
+		$("#addToCart").html("Update");
+		$(".backButton").children("a").attr("href", "2_placeOrder.html");
+
+	}
+	else
+	{
+		console.log("Value set for isEditPage, but instead of 'yes', it's set to: ", isEditPage);
+		isEditPage = false;
+	}
+
+
+	///////////////////////////////////////////////////////////////////
 	//Initialize DB and do a read
 	firebase.initializeApp({
 		apiKey: "AIzaSyALZcFp77OEXeQVVxOXjsdAX0T9FDLpZo8",
@@ -154,8 +181,11 @@ $(document).ready(function(){
 				//Refernece: https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
 				var form = $('<form></form>');
 
-		    form.attr("method", "get");
-		    form.attr("action", "./0_BCD_restaurantMenu.html");
+		    	form.attr("method", "get");
+		    	if (isEditPage)
+		    		form.attr("action", "./2_placeOrder.html");
+		    	else
+		    		form.attr("action", "./0_BCD_restaurantMenu.html");
 
 		    //var parameters = {
 		    //	"key1": "value1",

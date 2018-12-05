@@ -64,6 +64,15 @@ $( document ).ready(function() {
     });
   }
 
+  let itemPageDictionary = {
+    "Tofu": "1_BCD_tofu",
+    "Fried Mandu": "1_BCD_friedMandu",
+    "Egg Rolls": "1_BCD_eggRoll"
+  }; // Note: This is a rather poor implementation since it depends on the names we 
+     //       assign to each item in their respective html pages. But whatever, let's
+     //       hardcode away... 
+
+
 	// read data from database
 	function readData() {
     
@@ -102,7 +111,10 @@ $( document ).ready(function() {
               serving = " Servings";
             }
 
-            $('#orderList').append( '<a href="../Order/6_editItem.html">' +
+            let pageLink = '<form class="editItemForm" style="cursor:pointer;" action="./' 
+                            + itemPageDictionary[cur_title] + '.html" method="get">'; 
+
+            $('#orderList').append( pageLink +
               '<div class="item">' +
               '<div class="item-title">' +
               cur_title + '</div>' +
@@ -111,9 +123,13 @@ $( document ).ready(function() {
               '<div class="item-note">' + cur_notes + '</div>' +
               '<div class="item-number">' + cur_quantity + serving + '</div>' +
               '</div>' +
-              '</div>' + '</a>');
+              '</div>' + 
+              '<input name="isEditPage" type="hidden" value="yes">' +
+              '<input type="submit" style="display: none;"/>' +
+              '</form>');
 
           }
+
         });
 
         tax = Math.round( 0.095 * subTotal * 100) / 100;
@@ -142,6 +158,11 @@ $( document ).ready(function() {
 
          console.log("About to write total");
          console.log(total);
+
+        $(".editItemForm").click(function() {
+          $(this).submit();
+        });
+
         writeOrderTotal(subTotal, tax, bookingFee, total);
 
 		});
@@ -225,5 +246,11 @@ $( document ).ready(function() {
     writeExtraInfo(restaurant, dt, time, shared, notes);
     window.location.href='3_reviewOrder.html';
   }
+
+  // $( ".item" ).click(function() {
+  //   $( this ).children(".submit();
+  // });
+
+
 
 });

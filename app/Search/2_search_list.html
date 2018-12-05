@@ -7,7 +7,7 @@
     	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     	<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     	<link href="../../jquery/css/jquery.timepicker.min.css" rel="stylesheet" />
-    	<link href="../../css/search_Korean.css" rel="stylesheet" />
+    	<link href="../../css/search_list.css" rel="stylesheet" />
 	</head>
 	<body>
 		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
@@ -35,28 +35,40 @@
 					//}
     			});
 
-    			$("#tableShareButton").click(function() {
-    				var clicks = $(this).data('clicks');
-    				if(clicks) {
-    					$(this).css('border-style', ''); //Even number of clicks?
-    				}
-    				else {
-    					$(this).css('border-style', 'inset'); //Odd number of clicks?
-    				}
-    				$(this).data("clicks", !clicks);
-    			});
-    			//https://stackoverflow.com/questions/2459153/alternative-to-jquerys-toggle-method-that-supports-eventdata
+    			// $("#tableShareButton").click(function() {
+    			// 	var clicks = $(this).data('clicks');
+    			// 	if(clicks) {
+    			// 		$(this).css('border-style', ''); //Even number of clicks?
+    			// 	}
+    			// 	else {
+    			// 		$(this).css('border-style', 'inset'); //Odd number of clicks?
+    			// 	}
+    			// 	$(this).data("clicks", !clicks);
+    			// });
+    			// //https://stackoverflow.com/questions/2459153/alternative-to-jquerys-toggle-method-that-supports-eventdata
 
-    			$('input.timepicker').timepicker({
-    				    timeFormat: 'h:mm p',
-					    interval: 60,
-					    minTime: '12',
-					    maxTime: '8:00pm',
-					    defaultTime: '12',
-					    startTime: '12:00',
-					    dynamic: false,
-					    dropdown: true
-    			});
+    			// $('input.timepicker').timepicker({
+    			// 	    timeFormat: 'h:mm p',
+					  //   interval: 60,
+					  //   minTime: '12',
+					  //   maxTime: '8:00pm',
+					  //   defaultTime: '12',
+					  //   startTime: '12:00',
+					  //   dynamic: false,
+					  //   dropdown: true
+    			// });
+
+    			const urlParams = new URLSearchParams(window.location.search);
+    			let location = urlParams.get('location');
+				let searchTerm = urlParams.get('searchTerm');
+				if (location != null)
+				{
+					$("#search_location_input").attr("value", searchTerm);
+				}
+				if (searchTerm != null)
+				{
+					$("#search_restaurant_input").attr("value", searchTerm);
+				}
 
 			});
 	
@@ -74,7 +86,7 @@
 			
 			<div class="searchHeader">
 				<div class="bottomLeft"></div>
-				<div id="search_location_container" style="padding-top:5px">
+				<div id="search_location_container" style="padding-top:25px">
 					<i class="fas fa-map-marker-alt"></i>
 			    	<input id="search_location_input" type="text" autocomplete="off" placeholder="Current Location" name="username" required />
 			    </div>
@@ -84,16 +96,6 @@
 			    	<input id="search_restaurant_input" type="text" autocomplete="off" placeholder="Korean" name="password" required>
 			    </div> 
 
-			 	<div id="searchButtonsContainer">
-			 	<!-- https://stackoverflow.com/questions/2883373/simple-css-text-wont-center-in-a-button -->
-				    <span>
-				    	<input type="button" id="tableShareButton" value="Table Share" style="padding: 0px;"/>
-				    </span>
-
-				    <span>
-    					<input type="button" id="timeButton" class="timepicker" name="time" style="padding: 0px; position: relative; left: 10px" />
-				    </span>
-				</div>
 			</div>
 
 
