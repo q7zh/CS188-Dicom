@@ -67,7 +67,8 @@ $( document ).ready(function() {
   let itemPageDictionary = {
     "Tofu": "1_BCD_tofu",
     "Fried Mandu": "1_BCD_friedMandu",
-    "Egg Rolls": "1_BCD_eggRoll"
+    "Egg Rolls": "1_BCD_eggRoll",
+    "Pizza": "1_pizza"
   }; // Note: This is a rather poor implementation since it depends on the names we 
      //       assign to each item in their respective html pages. But whatever, let's
      //       hardcode away... 
